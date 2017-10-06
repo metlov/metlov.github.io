@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Installation</title>
+        <link rel="stylesheet" href="/umbrella-linux/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/umbrella-linux/">Umbrella Linux home page </a></h1>
+                <nav><ul>
+                <li class="active"><a href="/umbrella-linux/">English</a></li>
+                <li><a href="/umbrella-linux/ru/">Русский</a></li>
+                <!-- separator -->
+                <li style="background-color: white; padding: 5px;">&nbsp</li>
+                    <li><a href="/umbrella-linux/about/">About Umbrella Linux</a></li>
+                    <li class="active"><a href="/umbrella-linux/installation/">Installation</a></li>
+                    <li><a href="/umbrella-linux/category/posts.html">posts</a></li>
+                </ul>
+             </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">Installation</h1>
+    Translations:
+        <a href="/umbrella-linux/ru/installation/">ru</a>
+
+    <p>First, please think twice before installing. Do you really need it ?</p>
+<p>There is so little information about Umbrella Linux right now that
+the chances are you do not know what you are doing. In this case
+stop ! Talk to somebody, who can explain things to you (IRL or via
+the Internet), or wait until this site contains more information.</p>
+<p>The best way to try the Umbrella Linux is to install it into a VirtualBox
+virtual machine (this is the only installer mode, which have received
+at least a marginal testing so far).</p>
+<ol>
+<li>
+<p>Download the Ubuntu Xenial minimal installation image 
+(either <a href="http://archive.ubuntu.com/ubuntu/dists/xenial/main/installer-i386/current/images/netboot/mini.iso">32-bit</a>
+or <a href="http://archive.ubuntu.com/ubuntu/dists/xenial/main/installer-amd64/current/images/netboot/mini.iso">64-bit</a>
+version)
+and save it to your hard drive.</p>
+</li>
+<li>
+<p>Create the Virtual Machine for Umbrella to live in. For a typical
+bare installation (with almost no space for user home directories or mail)
+you will need a VM with 25Gb of hard drive, 3Gb RAM and a couple of virtual
+CPUs. When creating a VM connect the above-downloaded Ubuntu minimal
+installation image to its virtual CD drive.</p>
+<p><em>Optional:</em> it also can be a good idea to have a secondary network card installed
+on your physical machine so that you can later pass it through to the Umbrella
+VM and have it manage the network behind it (installing and using workstations
+and terminals). Without the secondary network card (or other means to connect
+to the "pub" bridge) you will only be able to access your new system as if you
+are outside of it.</p>
+</li>
+<li>
+<p>Boot the virtual machine and install the Ubuntu Xenial Linux with all
+the default settings (basically, agreeng to defaults all the time and
+not selecting any tasks via tasksel).
+Create some temporary user with a simple password.</p>
+</li>
+<li>
+<p>After the installation is finished, log in as a temporary user you have
+created. Use the <code>sudo -i</code> command to become root and download (using <code>wget</code>)
+all the files from <a href="/umbrella-linux/installer/">this web directory</a> to your
+root's home. These are all simple text files and <code>./umbrella-install</code>
+is a bash script, please <code>chmod +x ./umbrella-install</code> after downloading.
+If you wish to generate unique passwords and certificates for your system
+(which is, basically, any time if you change the system name or location
+in umbrella.xml) -- delete the <code>umbrella_keys.xml</code> file (it will be recreated
+by the installer with your own settings). Do not install any additional
+packages at this point (may be except <code>mc</code> and <code>aptitude</code>).</p>
+</li>
+<li>
+<p>Review the <code>*.xml</code> files and alter the settings there (since there is no
+documentation yet, you will need to consult somebody if you want to do
+some non-trivial changes). Again, if you have changed the system name (or
+location, or just in case) -- delete the umbrella_keys.xml to have it
+regenerated.</p>
+</li>
+<li>
+<p>Run the "./umbrella-install" script you've also downloaded on the previous
+step. It should do everything automatically, but may require a single hard
+(with "Power off"/"Power on") reboot of the virtual machine. After reboot
+run the script again and it should finish the installation. It may take
+several hours to complete depending on the speed of your hard drive.
+Ejoy your new Umbrella Linux system !</p>
+</li>
+</ol>
+<p>What to do next ?</p>
+<p>With the help of VirtualBox you can NAT some port (say 10022) to the port 22 of
+the first interface of the VM to be able to connect to it. You can log in
+as a first admin user, specified in umbrella.xml with a simple password,
+communicated to you at the end of the installation process. Then you can either
+connect via ssh or via X2Go client (be sure to select "Custom desktop" in sesion
+type and type there <code>umbrella-session</code>). From the graphical session you can run
+chromium browser and visit <code>https://gosa.&lt;your-domain&gt;/</code> for a
+Fusion Directory interface to your users, groups and workstations.
+Then you can connect a secondary interface ty the second VM port,
+register a couple of workstations via Fusion Directory and try to boot
+them over the network to try terminals and local workstation installation.</p>
+</section>
+        <section id="extras" class="body">
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'umbrella-linux';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

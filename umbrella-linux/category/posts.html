@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Umbrella Linux home page - posts</title>
+        <link rel="stylesheet" href="/umbrella-linux/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/umbrella-linux/">Umbrella Linux home page </a></h1>
+                <nav><ul>
+                <li class="active"><a href="/umbrella-linux/">English</a></li>
+                <li><a href="/umbrella-linux/ru/">Русский</a></li>
+                <!-- separator -->
+                <li style="background-color: white; padding: 5px;">&nbsp</li>
+                    <li><a href="/umbrella-linux/about/">About Umbrella Linux</a></li>
+                    <li><a href="/umbrella-linux/installation/">Installation</a></li>
+                    <li class="active"><a href="/umbrella-linux/category/posts.html">posts</a></li>
+                </ul>
+             </nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/umbrella-linux/release-0.1.html">Initial public release 0.1</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-10-06T22:10:00+03:00">
+Published: Fri, 06 Oct 2017
+        </abbr>
+
+        <address class="vcard author">
+By                         <a class="url fn" href="/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+        </address>
+<p>In <a href="/umbrella-linux/category/posts.html">posts</a>.</p>
+Translations:
+        <a href="/umbrella-linux/ru/release-0.1.html">ru</a>
+
+</footer><!-- /.post-info --><p>I'm happy to announce the initial public release of the Umbrella Linux.</p>
+<h3>State of the project:</h3>
+<p>The project is, actually, two years old (if we count only the time,
+when the its bcfg2 repository started to be parametrized). It was created
+from scratch in 2013 by me K.L.M. and two of my friends.
+It is already used in production across several organizations small
+(tens of employees), medium (hundreds) and large (thousands geographically
+distributed personnel). This is, of course due to the power of Debian and
+Ubuntu, which, if configured right, are very powerful and stable platforms
+ suitable for production. The Umbrella Linux itself (the thing that
+"configures stuff right") is of alpha quality, since we are still
+far from the point of reaching the full or complete feature set. There are
+many things still to improve and implement. Newertheless, what is implemented
+usually works well.</p>
+<p>This public release is made possible by the recent port of
+the Umbrella Linux to an 
+<a href="https://linuxcontainers.org/lxd/">LXD virtualization platform</a>,
+which, in turn,
+made it easy to write an installer to automatically deploy the system
+on a single virtual (or physical) server machine. Please note, that
+unlike QEMU/KVM version the LXD port should be considered much less
+mature, stable and secure (as LXD platform itself).
+The installer had received only a minimal testing and is not mature at all.
+Nevertheless, it opens a relatively
+easy possibility to try the Umbrella Linux in a safe virtual setting.
+It should be possible then (but was not tested yet) to migrate the Umbrella
+Linux virtual machines to KVM one by one to gradually deploy the automatically
+installed LXD version of the system.</p>
+<p>To try the Umbrella Linux you can follow the 
+<a href="/umbrella-linux/installation/">installation instructions</a>.</p><p>There are <a href="/umbrella-linux/release-0.1.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/umbrella-linux/mission.html" rel="bookmark"
+                           title="Permalink to What's our mission ?">What's our mission ?</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-09-26T22:10:00+03:00">
+Published: Tue, 26 Sep 2017
+        </abbr>
+
+        <address class="vcard author">
+By                         <a class="url fn" href="/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+        </address>
+<p>In <a href="/umbrella-linux/category/posts.html">posts</a>.</p>
+Translations:
+        <a href="/umbrella-linux/ru/mission.html">ru</a>
+
+</footer><!-- /.post-info -->                <p>The goal is to counteract the Internet service centralization by providing
+a local fully-featured user workspace and internet service platform with 
+as much externally accessible open standards based services as possible.
+For most individual home users the usual Linux Distribution (such as Debian,
+Ubuntu or Linux Mint) already helps to ...</p>
+                <a class="readmore" href="/umbrella-linux/mission.html">read more</a>
+<p>There are <a href="/umbrella-linux/mission.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'umbrella-linux';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
