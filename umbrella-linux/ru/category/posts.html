@@ -27,7 +27,54 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/ru/release-0.1.html">первая открытая версия 0.1</a></h1>
+                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/ru/release-0.2.html">открытая версия 0.2</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-04-18T21:00:00+03:00">
+Опубликовано: 18-04-2018
+        </abbr>
+
+        <address class="vcard author">
+автор                         <a class="url fn" href="https://metlov.github.io/umbrella-linux/ru/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+        </address>
+<p>В <a href="https://metlov.github.io/umbrella-linux/ru/category/posts.html">posts</a>.</p>
+Переводы:
+        <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.2.html">en</a>
+
+</footer><!-- /.post-info --><p>Рад представить версию 0.2 Umbrella Linux.</p>
+<h3>Список основных изменений:</h3>
+<ul>
+<li>новый класс "archiveworkstation": днём -- рабочая станция, ночью собирает резервные копии всех серверов системы.</li>
+<li>все соединения с mysql серверами теперь защищены при помощи SSL.</li>
+<li>теперь можно определить топологию локальной сети в файле lan_topology.xml , после чего Nagios будет автоматически сконфигурирован так, чтобы ослеживать состояние всех соединений и коммутаторов.</li>
+<li>улучшения класса "localfsworkstation" для случая оффлайнового включения.</li>
+<li>в файле firewall.xml можно теперь сконфигурировать реестр доверенных центров сертификации x509, он работает параллельно со стандартным реестром и определяет ограниченный набор "более близких" центров сертификации.</li>
+<li>(неокончено) начальная реализация федеративной Jabber сети между доверенными сетями.</li>
+<li>(неокончено) начальная реализация федеративной Asterisk сети.</li>
+<li>(неокончено) начальная установка сервера Invenio в DMZ (устанавливаются и настраиваются все зависимости, но саму систему Invenio нужно установить потом вручную).</li>
+<li>изменены определения DNS доменов в umbrella.xml, теперь можно легко сконфигурировать обслуживание поддоменов и зеркалирование сторонних доменов.</li>
+<li>переписаны скрипты в skel директории (определяют начальное содержимое домашнего каталога) с поддержкой версий.</li>
+<li>автоматическая регенерация списков отзыва для x509 сертификатов, которые генерирует Umbrella Linux.</li>
+<li>динамическая конфигурация хостов, в зависимости от их IP подсети.</li>
+<li>переписано детектирование физических/виртуальных/контейнерных машин.</li>
+<li>по-умолчанию на физические машины устанавливается memtest86+</li>
+<li>добавлены правила в OSSEC для улучшения качества мониторинга/уменьшения потока генерируемых оповещений.</li>
+<li>многочисленные исправления и улучшения самой системы и программы установки.</li>
+</ul>
+<p>Чтобы попробовать Umbrella Linux смотрите 
+<a href="/umbrella-linux/ru/installation/">инструкции по установке</a>.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.2.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Следующие статьи</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://metlov.github.io/umbrella-linux/ru/release-0.1.html" rel="bookmark"
+                           title="Permalink to первая открытая версия 0.1">первая открытая версия 0.1</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2017-10-06T22:10:00+03:00">
 Опубликовано: 06-10-2017
@@ -40,41 +87,15 @@
 Переводы:
         <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.1.html">en</a>
 
-</footer><!-- /.post-info --><p>Рад представить первую публичную версию Umbrella Linux.</p>
+</footer><!-- /.post-info -->                <p>Рад представить первую публичную версию Umbrella Linux.</p>
 <h3>Текущее состояние проекта:</h3>
 <p>Несмотря на то, что первая открытая версия выходит сегодня, проекту
 Umbrella Linux на самом деле уже несколько лет. Он был создан в 2013 с нуля
 мной (К.Л.М.) и двумя моими друзьями. На сегодня Umbrella Linux уже
-развёрнут в нескольких организациях от маленьких (десятки сотрудников) до
-больших (сотни) и очень больших (тысячи географически разбросанных
-сотрудников). Всё это, конечно, заслуга Debian и Ubuntu Linux, которые,
-при правильной настройке, представляют из себя стабильную и мощную
-платформу, достаточно зрелую для использования в каждодневной работе. Сам
-Umbrella Linux (который, собственно, и "настраивает всё правильно") на
-данный момент находится в стадии альфа-версии, поскольку мы ещё очень
-далеки от достижения полноты в реализации всех его возможностей. Многое
-можно улучшить и добавить. Однако, то, что уже добавлено -- как правило,
-работает хорошо.</p>
-<p>Эта версия была выпущена благодаря недавно разработанной поддержке запуска
-Umbrella Linux в <a href="https://linuxcontainers.org/lxd/">LXD контейнерах</a>.
- Таким образом, задача написания программы
-установки системы в набор LXD контейнеров стала обозримой, а потом и
-решённой. Заметьте, что, в отличие от QEMU/KVM, платформа LXD значительно
-более молодая и, на данный момент, должна считаться менее безопасной. Сама
-программа установки Umbrella Linux на сегодня прошла лишь минимальное
-тестирование. Несмотря на это, для типичных конфигураций системы
-она всё-же работает, а значит открывает возможность познакомиться
-с Umbrella Linux в безопасной виртуальной среде. В будущем (да и сейчас это
-можно сделать в ручном режиме) появится возможность мигрировать виртуальные
-машины Umbrella Linux после установки из LXD в QEMU/KVM по одной, что позволит
-развернуть в окончательном варианте автоматически установленную версию системы.</p>
-<p>Чтобы попробовать Umbrella Linux смотрите 
-<a href="/umbrella-linux/ru/installation/">инструкции по установке</a>.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.1.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Следующие статьи</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+развёрнут в ...</p>
+                <a class="readmore" href="https://metlov.github.io/umbrella-linux/ru/release-0.1.html">далее</a>
+<p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.1.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>

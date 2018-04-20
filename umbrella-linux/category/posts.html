@@ -27,7 +27,55 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/release-0.1.html">Initial public release 0.1</a></h1>
+                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/release-0.2.html">Public release 0.2</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-04-18T20:02:00+03:00">
+Published: Wed, 18 Apr 2018
+        </abbr>
+
+        <address class="vcard author">
+By                         <a class="url fn" href="https://metlov.github.io/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+        </address>
+<p>In <a href="https://metlov.github.io/umbrella-linux/category/posts.html">posts</a>.</p>
+Translations:
+        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.2.html">ru</a>
+
+</footer><!-- /.post-info --><p>I'm happy to announce the version 0.2 of the Umbrella Linux.</p>
+<h3>Summary of Changes:</h3>
+<ul>
+<li>new "archiveworkstation" class, which works as workstation during the day, but maintains a set of system's backups during the night.</li>
+<li>secure all mysql server connections via SSL by default</li>
+<li>network topology can now be defined via lan_topology.xml and the link/switch status will be automatically monitored with Nagios.</li>
+<li>"localfsworkstation" class improvements for the completely offline use case.</li>
+<li>configuration of trusted CAs registry via firewall.xml -- a restricted set of trusted CAs, which exists in parallel with the well known CA list.</li>
+<li>(incomplete) initial implementation of XMPP federation with trusted systems.</li>
+<li>(incomplete) initial implementation of PBX (Asterisk) federation.</li>
+<li>(incomplete) initial implementation of Invenio host in DMZ (all the dependencies are installed and configured, but Invenio itself needs to be installed automatically).</li>
+<li>rewrote domain definitions in umbrella.xml, now Umbrella can be configured to host sub-domains and be a slave DNS server.</li>
+<li>rewrote user's skel (initial home directory contents) handling.</li>
+<li>automatic maintenance of CRL for Umbrella-generated x509 certificates.</li>
+<li>dynamic host configuration, based on their subnet.</li>
+<li>rewrote physical/virtual/container detection groups.</li>
+<li>install memtest86+ on physical machines.</li>
+<li>more custom OSSEC rules to improve monitoring/reduce the level of OSSEC messages SPAM.</li>
+<li>numerous bugfixes and enhancements of both the system and the installer.</li>
+</ul>
+<p>See the
+<a href="/umbrella-linux/installation/">installation instructions</a>
+to try Umbrella Linux yourself.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.2.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://metlov.github.io/umbrella-linux/release-0.1.html" rel="bookmark"
+                           title="Permalink to Initial public release 0.1">Initial public release 0.1</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2017-10-06T22:10:00+03:00">
 Published: Fri, 06 Oct 2017
@@ -40,41 +88,14 @@ By                         <a class="url fn" href="https://metlov.github.io/umbr
 Translations:
         <a href="https://metlov.github.io/umbrella-linux/ru/release-0.1.html">ru</a>
 
-</footer><!-- /.post-info --><p>I'm happy to announce the initial public release of the Umbrella Linux.</p>
+</footer><!-- /.post-info -->                <p>I'm happy to announce the initial public release of the Umbrella Linux.</p>
 <h3>State of the project:</h3>
 <p>The project is, actually, two years old (if we count only the time,
 when the its bcfg2 repository started to be parametrized). It was created
-from scratch in 2013 by me K.L.M. and two of my friends.
-It is already used in production across several organizations small
-(tens of employees), medium (hundreds) and large (thousands geographically
-distributed personnel). This is, of course due to the power of Debian and
-Ubuntu, which, if configured right, are very powerful and stable platforms
- suitable for production. The Umbrella Linux itself (the thing that
-"configures stuff right") is of alpha quality, since we are still
-far from the point of reaching the full or complete feature set. There are
-many things still to improve and implement. Newertheless, what is implemented
-usually works well.</p>
-<p>This public release is made possible by the recent port of
-the Umbrella Linux to an 
-<a href="https://linuxcontainers.org/lxd/">LXD virtualization platform</a>,
-which, in turn,
-made it easy to write an installer to automatically deploy the system
-on a single virtual (or physical) server machine. Please note, that
-unlike QEMU/KVM version the LXD port should be considered much less
-mature, stable and secure (as LXD platform itself).
-The installer had received only a minimal testing and is not mature at all.
-Nevertheless, it opens a relatively
-easy possibility to try the Umbrella Linux in a safe virtual setting.
-It should be possible then (but was not tested yet) to migrate the Umbrella
-Linux virtual machines to KVM one by one to gradually deploy the automatically
-installed LXD version of the system.</p>
-<p>To try the Umbrella Linux you can follow the 
-<a href="/umbrella-linux/installation/">installation instructions</a>.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.1.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+from scratch in 2013 by me K.L ...</p>
+                <a class="readmore" href="https://metlov.github.io/umbrella-linux/release-0.1.html">read more</a>
+<p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.1.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
