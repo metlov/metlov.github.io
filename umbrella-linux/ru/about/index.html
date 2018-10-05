@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <title>Что такое Umbrella Linux ?</title>
-        <link rel="stylesheet" href="https://metlov.github.io/umbrella-linux/ru/../theme/css/main.css" />
+        <link rel="stylesheet" href="http://localhost:8000/umbrella-linux/ru/../theme/css/main.css" />
 
         <!--[if IE]>
             <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -12,41 +12,46 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="https://metlov.github.io/umbrella-linux/ru/">Umbrella Linux home page </a></h1>
+                <h1><a href="http://localhost:8000/umbrella-linux/ru/">Umbrella Linux home page </a></h1>
                 <nav><ul>
-                <li><a href="https://metlov.github.io/umbrella-linux/">English</a></li>
-                <li class="active"><a href="https://metlov.github.io/umbrella-linux/ru/">Русский</a></li>
+                <li><a href="http://localhost:8000/umbrella-linux/">English</a></li>
+                <li class="active"><a href="http://localhost:8000/umbrella-linux/ru/">Русский</a></li>
                 <!-- separator -->
                 <li style="background-color: white; padding: 5px;">&nbsp</li>
-                    <li class="active"><a href="https://metlov.github.io/umbrella-linux/ru/about/">Что такое Umbrella Linux ?</a></li>
-                    <li><a href="https://metlov.github.io/umbrella-linux/ru/installation/">Установка</a></li>
-                    <li><a href="https://metlov.github.io/umbrella-linux/ru/category/posts.html">posts</a></li>
+                    <li class="active"><a href="http://localhost:8000/umbrella-linux/ru/about/">Что такое Umbrella Linux ?</a></li>
+                    <li><a href="http://localhost:8000/umbrella-linux/ru/installation/">Установка</a></li>
+                    <li><a href="http://localhost:8000/umbrella-linux/ru/category/posts.html">posts</a></li>
                 </ul>
              </nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
     <h1 class="entry-title">Что такое Umbrella Linux ?</h1>
     Переводы:
-        <a href="https://metlov.github.io/umbrella-linux/ru/../about/">en</a>
+        <a href="http://localhost:8000/umbrella-linux/ru/../about/">en</a>
 
     <p>Umbrella Linux -- платформа для содрудничества системных администраторов
 в разработке сложной и многофункциональной IT инфраструктуры для больших
 и маленьких организаций.</p>
-<p>На данный момент Umbrella Linux представляет собой настраиваемый кластер
+<p>На данный момент Umbrella Linux представляет собой параметризованный кластер
 Unix систем (включающий в себя серверы и рабочие станции) с централизованной
 регистрацией пользователей и компьютеров средствами 
-<a href="https://ru.wikipedia.org/wiki/LDAP">LDAP</a>, с поддержкой
-технологии единого входа на базе <a href="https://web.mit.edu/kerberos/">Kerberos</a>,
+<a href="https://ru.wikipedia.org/wiki/LDAP">LDAP</a>; поддержкой
+технологии единого входа на базе <a href="https://web.mit.edu/kerberos/">Kerberos</a>;
 единой файловой системой 
-<a href="https://ru.wikipedia.org/wiki/Network_File_System">NFSv4</a>,
-с управлением DNS зоной, собственным WWW сервером организации,
+<a href="https://ru.wikipedia.org/wiki/Network_File_System">NFSv4</a>;
+управлением DNS зоной, собственным WWW сервером организации;
 сервисами внешней и внутренней электронной почты (с возможностью включения
-интерфейса Web Mail), внутренние сервисы конференций на базе Jabber, сервис
-терминалов на основе <a href="https://wiki.x2go.org/">X2Go</a>
+интерфейса Web Mail);
+внутренним сервисом конференций на базе Jabber (с
+возможностью прозрачной шифрованной связи с другими доверенными системами);
+удалённые (но полностью контролируемые и конфигурируемые) рабочие станции,
+получающие доступ к системе посредством VPN;
+сервис терминалов на основе <a href="https://wiki.x2go.org/">X2Go</a>
 для включения в полноценную работу старых маломощных
-компьютеров и для удалённого графического доступа к системе, сервис
-автоматического развёртывания пользовательских рабочих станций
-при помощи их загрузки по локальной сети.</p>
+компьютеров и для удалённого графического доступа к системе;
+сервис автоматического развёртывания пользовательских рабочих станций
+при помощи их загрузки по локальной сети и удалённых рабочих станций
+при помощи индивидуальной автоматически сгенерированной программы установки.</p>
 <p>Функции безопасности и контроля Umbrella Linux включают в себя внешний
 сетевой экран, установку доступных извне сервисов (кроме протокола SSH) 
 внутри сети периметра (DMZ), <a href="https://www.nagios.org/">Nagios</a> для 
@@ -56,6 +61,9 @@ Unix систем (включающий в себя серверы и рабоч
 конфигурации всех серверов и рабочих станций средствами
 <a href="http://bcfg2.org/">BCFG2</a>.</p>
 <p>Это только основные функции, на самом деле их гораздо больше.</p>
+<p>В целом Umbrella Linux стремится включить в себя все сервисы, необходимые
+для независимой работы малой/средней/большой организации, реализующей своё
+собственное облако в информационном пространстве.</p>
 </section>
         <section id="extras" class="body">
         </section><!-- /#extras -->

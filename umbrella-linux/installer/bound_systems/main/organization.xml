@@ -2,21 +2,18 @@
 <!-- structure of the organization -->
 <ou>
     <name>Central Office</name>
-<!--       The following empty <network_match/> tag is needed if we have -->
-<!--       <network_match/> tags inside of children <ou> elements. -->
-<!--    <network_match/> -->
+    <network_match/>
     <network>172.17.128.0/21</network>
     <gateway>172.17.128.1</gateway>
     <admin_group>itadmins</admin_group>
     <users_group>crew</users_group>
     <bcfg2_profile>workstation</bcfg2_profile>
 <!-- an example of remote branch -->
-<!--<ou>
-        <name>Remote branch 01</name>
-        <network_match/>
-        <network>172.16.0.0/24</network>
-        <gateway>172.16.0.1</gateway>
-        <admin_group>itadmins01</admin_group> --> <!-- members of this group and -->
+    <ou>
+        <name>Local branch 01</name>
+        <network_match>172.17.128.0/24</network_match>
+        <gateway>172.17.128.1</gateway>
+        <!-- <admin_group>itadmins-1</admin_group> --> <!-- members of this group and -->
                                               <!-- of the other admin group  -->
                                               <!-- higher in the hierarchy   -->
                                               <!-- such as "itadmins" here   -->
@@ -56,6 +53,6 @@
             <!-- they get assigned localfsworkstation profile -->
             <!-- the network is also inherited from the parent node -->
 <!--    </ou> -->
-<!--</ou> -->
+  </ou>
 </ou>
 </Properties>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Public release 0.2</title>
+        <title>Public release 0.3</title>
         <link rel="stylesheet" href="http://localhost:8000/umbrella-linux/theme/css/main.css" />
 
         <!--[if IE]>
@@ -28,14 +28,14 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://localhost:8000/umbrella-linux/release-0.2.html" rel="bookmark"
-           title="Permalink to Public release 0.2">Public release 0.2</a></h1>
+        <a href="http://localhost:8000/umbrella-linux/release-0.3.html" rel="bookmark"
+           title="Permalink to Public release 0.3">Public release 0.3</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2018-04-18T20:02:00+03:00">
-Published: Wed, 18 Apr 2018
+        <abbr class="published" title="2018-10-05T16:05:00+03:00">
+Published: Fri, 05 Oct 2018
         </abbr>
 
         <address class="vcard author">
@@ -43,25 +43,26 @@ By                         <a class="url fn" href="http://localhost:8000/umbrell
         </address>
 <p>In <a href="http://localhost:8000/umbrella-linux/category/posts.html">posts</a>.</p>
 Translations:
-        <a href="http://localhost:8000/umbrella-linux/ru/release-0.2.html">ru</a>
+        <a href="http://localhost:8000/umbrella-linux/ru/release-0.3.html">ru</a>
 
-</footer><!-- /.post-info -->      <p>I'm happy to announce the version 0.2 of the Umbrella Linux.</p>
+</footer><!-- /.post-info -->      <p>I'm happy to announce the version 0.3 of the Umbrella Linux.</p>
+<p>This is, probably, the last Ubuntu Xenial based release. The work is underway on extending the support to Ubuntu Bionic.</p>
 <h3>Summary of Changes:</h3>
 <ul>
-<li>new "archiveworkstation" class, which works as workstation during the day, but maintains a set of system's backups during the night.</li>
-<li>secure all mysql server connections via SSL by default</li>
-<li>network topology can now be defined via lan_topology.xml and the link/switch status will be automatically monitored with Nagios.</li>
-<li>"localfsworkstation" class improvements for the completely offline use case.</li>
-<li>configuration of trusted CAs registry via firewall.xml -- a restricted set of trusted CAs, which exists in parallel with the well known CA list.</li>
-<li>(incomplete) initial implementation of XMPP federation with trusted systems.</li>
-<li>(incomplete) initial implementation of PBX (Asterisk) federation.</li>
-<li>(incomplete) initial implementation of Invenio host in DMZ (all the dependencies are installed and configured, but Invenio itself needs to be installed automatically).</li>
-<li>rewrote domain definitions in umbrella.xml, now Umbrella can be configured to host sub-domains and be a slave DNS server.</li>
-<li>rewrote user's skel (initial home directory contents) handling.</li>
-<li>automatic maintenance of CRL for Umbrella-generated x509 certificates.</li>
-<li>dynamic host configuration, based on their subnet.</li>
-<li>rewrote physical/virtual/container detection groups.</li>
-<li>install memtest86+ on physical machines.</li>
+<li>made the installer work with updated LXD (after bionic release) from xenial-backports.</li>
+<li>installer now works on top of freshly installed ubuntu-server (in addition to ubuntu-mini).</li>
+<li>x2go_thinclient now uses Debian "stretch".</li>
+<li>enabled cross-domain encrypted XMPP between two Umbrella Linux systems if they trust each other's root certificates.</li>
+<li>DNS and DHCP configuration is now generated from LDAP by own script instead of argonaut.</li>
+<li>removed DNS and DHCP configuration from LDAP and Fusion Directory, which greatly simplifies the host management.</li>
+<li>implemented host locking in Fusion Directory, which excludes the host both from DNS and DHCP configurations.</li>
+<li>new IP space review and address allocation script umbrella-hosts, installed on configuration server.</li>
+<li>new workstation registration script umbrella-addworkstation, installed on configuration server.</li>
+<li>switched to ulogd2 for firewall logging on router (this allows to see the firewall logs when router is an LXD container).</li>
+<li>new "maintenance mode" of the installer, which allows to (re-)create missing LXD containers on already installed Umbrella Linux system according to umbrella.xml specification.</li>
+<li>added optional backdoor server class, allowing remote itadmins to access the system in case the router is down.</li>
+<li>added optional DMZvpn server class and roamingworkstation profile to allow roaming Umbrella Linux systems (should be registered in Fusion Directory with location set to "roaming").</li>
+<li>new umbrella-mkinstall script on configuration server for generating Umbrella Linux installers for specific roaming workstations (allowing to initialize them remotely with proper VPN keys from a fresh Ubuntu Desktop install).</li>
 <li>more custom OSSEC rules to improve monitoring/reduce the level of OSSEC messages SPAM.</li>
 <li>numerous bugfixes and enhancements of both the system and the installer.</li>
 </ul>
@@ -74,8 +75,8 @@ to try Umbrella Linux yourself.</p>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = 'umbrella-linux';
-        var disqus_identifier = 'release-0.2.html';
-        var disqus_url = 'http://localhost:8000/umbrella-linux/release-0.2.html';
+        var disqus_identifier = 'release-0.3.html';
+        var disqus_url = 'http://localhost:8000/umbrella-linux/release-0.3.html';
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//umbrella-linux.disqus.com/embed.js';

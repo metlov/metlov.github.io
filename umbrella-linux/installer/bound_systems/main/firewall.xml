@@ -27,7 +27,8 @@
         <!-- http//www.<domain>/~<username> -->
         <!-- <www_homes/> -->
     <!-- </auth_in_DMZ> -->
-    <!-- <mail_in_DMZ> -->
+    <auth_in_DMZ/>
+    <mail_in_DMZ>
     <!-- just having this tag by itself (even empty) enables authenticated -->
     <!-- mail from within DMZ (useful for installing a Webmail frontend).  -->
 
@@ -43,10 +44,8 @@
     <!-- There is also a shorthand notation to specify all the addresses of-->
     <!-- a mailing list, such as mailman-confirm, mailman-join, etc.       -->
     <!--   <robot><list_name>mailman</list_name><ip>172.17.3.5</ip></robot> -->
-    <!-- </mail_in_DMZ> -->
-    <!-- <admin_from_VPN/> --> <!-- Enables access to the system management -->
-                               <!-- features from VPN. Most notably to the  -->
-                               <!-- directory service and ssh ports in pub. -->
+    </mail_in_DMZ>
+    <admin_from_VPN/>
     <DNS_SMTP_lists>
         <whitelist>list.dnswl.org</whitelist>
         <blacklist>b.barracudacentral.org</blacklist>
@@ -79,7 +78,32 @@
     <!-- <trusted_CA> ... LITERAL CERTIFICATE 2 DATA </trusted_CA> -->
     <!--                              ...                          -->
     <!-- <trusted_CA> ... LITERAL CERTIFICATE n DATA </trusted_CA> -->
-
+    <trusted_CA>-----BEGIN CERTIFICATE-----
+MIIEVzCCAz+gAwIBAgIJAKxh5GRTU3rSMA0GCSqGSIb3DQEBCwUAMIHBMQswCQYD
+VQQGEwJSVTEiMCAGA1UECAwZRG9uZXRzayBQZW9wbGUncyBSZXB1YmxpYzEQMA4G
+A1UEBwwHRG9uZXRzazEWMBQGA1UECgwNVW1icmVsbGEgaW5jLjERMA8GA1UECwwI
+T2ZmaWNlIDExKzApBgkqhkiG9w0BCQEWHGl0YWRtaW5AYXV4MS51bWJyZWxsYS1p
+bmMucnUxJDAiBgNVBAMMG2NvbmZpZy5hdXgxLnVtYnJlbGxhLWluYy5ydTAeFw0x
+ODA1MTYxMDA2MzhaFw0yODA1MTMxMDA2MzhaMIHBMQswCQYDVQQGEwJSVTEiMCAG
+A1UECAwZRG9uZXRzayBQZW9wbGUncyBSZXB1YmxpYzEQMA4GA1UEBwwHRG9uZXRz
+azEWMBQGA1UECgwNVW1icmVsbGEgaW5jLjERMA8GA1UECwwIT2ZmaWNlIDExKzAp
+BgkqhkiG9w0BCQEWHGl0YWRtaW5AYXV4MS51bWJyZWxsYS1pbmMucnUxJDAiBgNV
+BAMMG2NvbmZpZy5hdXgxLnVtYnJlbGxhLWluYy5ydTCCASIwDQYJKoZIhvcNAQEB
+BQADggEPADCCAQoCggEBALhqsX0BQz7u9GLjDbsdnbBaGcElhzKKgRWbAZsP/SFI
+UBACKG5g+B/vpfE185eF+ucojxrsShWWuxqkgFpoF7M3egHxFb5BoqB51p4b6cqR
+/rLrfyxBozbee3i8RCh/gNZ7GoRraxCjnRJ0JDTYi0QSaEWGQFJK+sKQZFR3mxK0
+qlHxuMtHUh9pEyaRP/tf9ohMv9NsMbULb/+lDnmbCey6ya+wgA3UthO05lQU49R9
+sO3L+Orf7YexruMZORHCTfTMyneh5VPrAxBjsinedfEm+kRy+2BHX8/VYW8y/1Mu
+yBkeMXUsPRnzbGz/A+/Te9s9RWPThNa3JV3Uj5MKfAcCAwEAAaNQME4wHQYDVR0O
+BBYEFIXTKzfjqSqFNt+oQGV6y/PsENFMMB8GA1UdIwQYMBaAFIXTKzfjqSqFNt+o
+QGV6y/PsENFMMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAFxErCe+
+iSByxyMo3E8uc5pHTMIZLGjbZPNcv4tKMD0vtMXQsIAIStxQAII2ZNG/BwT7yK32
+aMXzdNGHty4AL3cGKU/ZOYN03+4cSS4eD4oslWQSgL65J8TCWzY17VzbzFG7cU2K
+6tX4nH0tFhUCtrRNDPizVeSeA1AZ5b6d0AnhYwHEECx01+N+fi7QxNGyNKKbMVeZ
+NhWJjDfglR8DOkS43CvWDbLMyc5hKTZjAmZsO/4Vquqpf419tkrHfH52tSg8MvwQ
+V3CoRpX14DoKYTwXPvQbfLOQiThxJOCrBpFbwwgei2XHyoj3fI+h8DM3yhsg37Jf
+ACc+7fI2T+3nOvw=
+-----END CERTIFICATE-----</trusted_CA>
 
     <!--additional rules to be injected into IPv4 firewall -->
 

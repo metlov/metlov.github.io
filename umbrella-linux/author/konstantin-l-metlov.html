@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <title>Umbrella Linux home page - Konstantin L. Metlov</title>
-        <link rel="stylesheet" href="https://metlov.github.io/umbrella-linux/theme/css/main.css" />
+        <link rel="stylesheet" href="http://localhost:8000/umbrella-linux/theme/css/main.css" />
 
         <!--[if IE]>
             <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -12,57 +12,58 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="https://metlov.github.io/umbrella-linux/">Umbrella Linux home page </a></h1>
+                <h1><a href="http://localhost:8000/umbrella-linux/">Umbrella Linux home page </a></h1>
                 <nav><ul>
-                <li class="active"><a href="https://metlov.github.io/umbrella-linux/">English</a></li>
-                <li><a href="https://metlov.github.io/umbrella-linux/ru/">Русский</a></li>
+                <li class="active"><a href="http://localhost:8000/umbrella-linux/">English</a></li>
+                <li><a href="http://localhost:8000/umbrella-linux/ru/">Русский</a></li>
                 <!-- separator -->
                 <li style="background-color: white; padding: 5px;">&nbsp</li>
-                    <li><a href="https://metlov.github.io/umbrella-linux/about/">About Umbrella Linux</a></li>
-                    <li><a href="https://metlov.github.io/umbrella-linux/installation/">Installation</a></li>
-                    <li><a href="https://metlov.github.io/umbrella-linux/category/posts.html">posts</a></li>
+                    <li><a href="http://localhost:8000/umbrella-linux/about/">About Umbrella Linux</a></li>
+                    <li><a href="http://localhost:8000/umbrella-linux/installation/">Installation</a></li>
+                    <li><a href="http://localhost:8000/umbrella-linux/category/posts.html">posts</a></li>
                 </ul>
              </nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/release-0.2.html">Public release 0.2</a></h1>
+                    <h1 class="entry-title"><a href="http://localhost:8000/umbrella-linux/release-0.3.html">Public release 0.3</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2018-04-18T20:02:00+03:00">
-Published: Wed, 18 Apr 2018
+        <abbr class="published" title="2018-10-05T16:05:00+03:00">
+Published: Fri, 05 Oct 2018
         </abbr>
 
         <address class="vcard author">
-By                         <a class="url fn" href="https://metlov.github.io/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+By                         <a class="url fn" href="http://localhost:8000/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
         </address>
-<p>In <a href="https://metlov.github.io/umbrella-linux/category/posts.html">posts</a>.</p>
+<p>In <a href="http://localhost:8000/umbrella-linux/category/posts.html">posts</a>.</p>
 Translations:
-        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.2.html">ru</a>
+        <a href="http://localhost:8000/umbrella-linux/ru/release-0.3.html">ru</a>
 
-</footer><!-- /.post-info --><p>I'm happy to announce the version 0.2 of the Umbrella Linux.</p>
+</footer><!-- /.post-info --><p>I'm happy to announce the version 0.3 of the Umbrella Linux.</p>
+<p>This is, probably, the last Ubuntu Xenial based release. The work is underway on extending the support to Ubuntu Bionic.</p>
 <h3>Summary of Changes:</h3>
 <ul>
-<li>new "archiveworkstation" class, which works as workstation during the day, but maintains a set of system's backups during the night.</li>
-<li>secure all mysql server connections via SSL by default</li>
-<li>network topology can now be defined via lan_topology.xml and the link/switch status will be automatically monitored with Nagios.</li>
-<li>"localfsworkstation" class improvements for the completely offline use case.</li>
-<li>configuration of trusted CAs registry via firewall.xml -- a restricted set of trusted CAs, which exists in parallel with the well known CA list.</li>
-<li>(incomplete) initial implementation of XMPP federation with trusted systems.</li>
-<li>(incomplete) initial implementation of PBX (Asterisk) federation.</li>
-<li>(incomplete) initial implementation of Invenio host in DMZ (all the dependencies are installed and configured, but Invenio itself needs to be installed automatically).</li>
-<li>rewrote domain definitions in umbrella.xml, now Umbrella can be configured to host sub-domains and be a slave DNS server.</li>
-<li>rewrote user's skel (initial home directory contents) handling.</li>
-<li>automatic maintenance of CRL for Umbrella-generated x509 certificates.</li>
-<li>dynamic host configuration, based on their subnet.</li>
-<li>rewrote physical/virtual/container detection groups.</li>
-<li>install memtest86+ on physical machines.</li>
+<li>made the installer work with updated LXD (after bionic release) from xenial-backports.</li>
+<li>installer now works on top of freshly installed ubuntu-server (in addition to ubuntu-mini).</li>
+<li>x2go_thinclient now uses Debian "stretch".</li>
+<li>enabled cross-domain encrypted XMPP between two Umbrella Linux systems if they trust each other's root certificates.</li>
+<li>DNS and DHCP configuration is now generated from LDAP by own script instead of argonaut.</li>
+<li>removed DNS and DHCP configuration from LDAP and Fusion Directory, which greatly simplifies the host management.</li>
+<li>implemented host locking in Fusion Directory, which excludes the host both from DNS and DHCP configurations.</li>
+<li>new IP space review and address allocation script umbrella-hosts, installed on configuration server.</li>
+<li>new workstation registration script umbrella-addworkstation, installed on configuration server.</li>
+<li>switched to ulogd2 for firewall logging on router (this allows to see the firewall logs when router is an LXD container).</li>
+<li>new "maintenance mode" of the installer, which allows to (re-)create missing LXD containers on already installed Umbrella Linux system according to umbrella.xml specification.</li>
+<li>added optional backdoor server class, allowing remote itadmins to access the system in case the router is down.</li>
+<li>added optional DMZvpn server class and roamingworkstation profile to allow roaming Umbrella Linux systems (should be registered in Fusion Directory with location set to "roaming").</li>
+<li>new umbrella-mkinstall script on configuration server for generating Umbrella Linux installers for specific roaming workstations (allowing to initialize them remotely with proper VPN keys from a fresh Ubuntu Desktop install).</li>
 <li>more custom OSSEC rules to improve monitoring/reduce the level of OSSEC messages SPAM.</li>
 <li>numerous bugfixes and enhancements of both the system and the installer.</li>
 </ul>
 <p>See the
 <a href="/umbrella-linux/installation/">installation instructions</a>
-to try Umbrella Linux yourself.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.2.html#disqus_thread">comments</a>.</p>                </article>
+to try Umbrella Linux yourself.</p><p>There are <a href="http://localhost:8000/umbrella-linux/release-0.3.html#disqus_thread">comments</a>.</p>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
@@ -71,7 +72,36 @@ to try Umbrella Linux yourself.</p><p>There are <a href="https://metlov.github.i
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="https://metlov.github.io/umbrella-linux/release-0.1.html" rel="bookmark"
+                    <h1><a href="http://localhost:8000/umbrella-linux/release-0.2.html" rel="bookmark"
+                           title="Permalink to Public release 0.2">Public release 0.2</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-04-18T20:02:00+03:00">
+Published: Wed, 18 Apr 2018
+        </abbr>
+
+        <address class="vcard author">
+By                         <a class="url fn" href="http://localhost:8000/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+        </address>
+<p>In <a href="http://localhost:8000/umbrella-linux/category/posts.html">posts</a>.</p>
+Translations:
+        <a href="http://localhost:8000/umbrella-linux/ru/release-0.2.html">ru</a>
+
+</footer><!-- /.post-info -->                <p>I'm happy to announce the version 0.2 of the Umbrella Linux.</p>
+<h3>Summary of Changes:</h3>
+<ul>
+<li>new "archiveworkstation" class, which works as workstation during the day, but maintains a set of system's backups during the night.</li>
+<li>secure all mysql server connections via SSL by default</li>
+<li>network topology can now ...</li></ul>
+                <a class="readmore" href="http://localhost:8000/umbrella-linux/release-0.2.html">read more</a>
+<p>There are <a href="http://localhost:8000/umbrella-linux/release-0.2.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://localhost:8000/umbrella-linux/release-0.1.html" rel="bookmark"
                            title="Permalink to Initial public release 0.1">Initial public release 0.1</a></h1>
                 </header>
 
@@ -82,24 +112,24 @@ Published: Fri, 06 Oct 2017
         </abbr>
 
         <address class="vcard author">
-By                         <a class="url fn" href="https://metlov.github.io/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+By                         <a class="url fn" href="http://localhost:8000/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
         </address>
-<p>In <a href="https://metlov.github.io/umbrella-linux/category/posts.html">posts</a>.</p>
+<p>In <a href="http://localhost:8000/umbrella-linux/category/posts.html">posts</a>.</p>
 Translations:
-        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.1.html">ru</a>
+        <a href="http://localhost:8000/umbrella-linux/ru/release-0.1.html">ru</a>
 
 </footer><!-- /.post-info -->                <p>I'm happy to announce the initial public release of the Umbrella Linux.</p>
 <h3>State of the project:</h3>
 <p>The project is, actually, two years old (if we count only the time,
 when the its bcfg2 repository started to be parametrized). It was created
 from scratch in 2013 by me K.L ...</p>
-                <a class="readmore" href="https://metlov.github.io/umbrella-linux/release-0.1.html">read more</a>
-<p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.1.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+                <a class="readmore" href="http://localhost:8000/umbrella-linux/release-0.1.html">read more</a>
+<p>There are <a href="http://localhost:8000/umbrella-linux/release-0.1.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="https://metlov.github.io/umbrella-linux/mission.html" rel="bookmark"
+                    <h1><a href="http://localhost:8000/umbrella-linux/mission.html" rel="bookmark"
                            title="Permalink to What's our mission ?">What's our mission ?</a></h1>
                 </header>
 
@@ -110,19 +140,19 @@ Published: Tue, 26 Sep 2017
         </abbr>
 
         <address class="vcard author">
-By                         <a class="url fn" href="https://metlov.github.io/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+By                         <a class="url fn" href="http://localhost:8000/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
         </address>
-<p>In <a href="https://metlov.github.io/umbrella-linux/category/posts.html">posts</a>.</p>
+<p>In <a href="http://localhost:8000/umbrella-linux/category/posts.html">posts</a>.</p>
 Translations:
-        <a href="https://metlov.github.io/umbrella-linux/ru/mission.html">ru</a>
+        <a href="http://localhost:8000/umbrella-linux/ru/mission.html">ru</a>
 
 </footer><!-- /.post-info -->                <p>The goal is to counteract the Internet service centralization by providing
 a local fully-featured user workspace and internet service platform with 
 as much externally accessible open standards based services as possible.
 For most individual home users the usual Linux Distribution (such as Debian,
 Ubuntu or Linux Mint) already helps to ...</p>
-                <a class="readmore" href="https://metlov.github.io/umbrella-linux/mission.html">read more</a>
-<p>There are <a href="https://metlov.github.io/umbrella-linux/mission.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+                <a class="readmore" href="http://localhost:8000/umbrella-linux/mission.html">read more</a>
+<p>There are <a href="http://localhost:8000/umbrella-linux/mission.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
                 </section><!-- /#content -->
