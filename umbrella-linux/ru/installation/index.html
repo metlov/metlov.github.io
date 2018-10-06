@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <title>Установка</title>
-        <link rel="stylesheet" href="https://metlov.github.io/umbrella-linux/ru/../theme/css/main.css" />
+        <link rel="stylesheet" href="http://localhost:8000/umbrella-linux/ru/../theme/css/main.css" />
 
         <!--[if IE]>
             <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -12,22 +12,22 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="https://metlov.github.io/umbrella-linux/ru/">Umbrella Linux home page </a></h1>
+                <h1><a href="http://localhost:8000/umbrella-linux/ru/">Umbrella Linux home page </a></h1>
                 <nav><ul>
-                <li><a href="https://metlov.github.io/umbrella-linux/">English</a></li>
-                <li class="active"><a href="https://metlov.github.io/umbrella-linux/ru/">Русский</a></li>
+                <li><a href="http://localhost:8000/umbrella-linux/">English</a></li>
+                <li class="active"><a href="http://localhost:8000/umbrella-linux/ru/">Русский</a></li>
                 <!-- separator -->
                 <li style="background-color: white; padding: 5px;">&nbsp</li>
-                    <li><a href="https://metlov.github.io/umbrella-linux/ru/about/">Что такое Umbrella Linux ?</a></li>
-                    <li class="active"><a href="https://metlov.github.io/umbrella-linux/ru/installation/">Установка</a></li>
-                    <li><a href="https://metlov.github.io/umbrella-linux/ru/category/posts.html">posts</a></li>
+                    <li><a href="http://localhost:8000/umbrella-linux/ru/about/">Что такое Umbrella Linux ?</a></li>
+                    <li class="active"><a href="http://localhost:8000/umbrella-linux/ru/installation/">Установка</a></li>
+                    <li><a href="http://localhost:8000/umbrella-linux/ru/category/posts.html">posts</a></li>
                 </ul>
              </nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
     <h1 class="entry-title">Установка</h1>
     Переводы:
-        <a href="https://metlov.github.io/umbrella-linux/ru/../installation/">en</a>
+        <a href="http://localhost:8000/umbrella-linux/ru/../installation/">en</a>
 
     <p>Сначала крепко подумайте -- нужно ли Вам тратить время на эту программу ?</p>
 <p>В сети сейчас так мало информации об Umbrella Linux, что скорее всего
@@ -52,6 +52,8 @@
 3Gb оперативной памяти и парочкой виртуальных процессоров. Когда будете
 создавать эту виртуальную машину -- сразу подключите к её виртуальному CD
 приводу скачанный Вами ранее установочный образ Ubuntu Xenial.</p>
+<p>При установке в VirtualBox с сетевым адаптером в режиме сетевого моста, 
+убедитесь, что для него разрешён неразборчивый режим (promiscous mode).</p>
 <p><em>Необязательно:</em> если у Вас на физическом компьютере две сетевые карточки --
 можно передать одну из них в качестве второй сетевой карточки виртуалки.
 Подключая к этой карточке через коммутатор другие компьютеры, можно будет
@@ -73,22 +75,28 @@
 Эти файлы -- простой текст. В том числе и bash скрипт <code>./umbrella-install</code>,
 которому после скачивания нужно дать права для исполнения командой
 <code>chmod +x ./umbrella-install</code>. Если Вы хотите сгенерировать
-уникальные пароли и сертификаты для своей системы -- удалите файл
+уникальные пароли и сертификаты для своей системы 
+(это необходимо, в частности, если Вы изменили имя или местоположение системы в
+файле umbrella.xml) -- удалите файл
  <code>umbrella_keys.xml</code> (он будет перегенерирован программой установки).
 Не устанавливайте дополнительных пакетов (кроме разве что <code>mc</code> и <code>aptitude</code>).</p>
 </li>
 <li>
-<p>Просмотрите <code>*.xml</code> файлы и поменяйте настройки в них (поскольку
-документации сейчас нет -- желательно проконсультироваться при этом
-с кем-нибудь, кто их уже видел). Если Вы решили изменить название системы
-или её местоположение -- удалите <code>umbrella_keys.xml</code>, чтобы заново
-сгенерировать сертификаты.</p>
+<p>Просмотрите <code>*.xml</code> файлы и поменяйте настройки в них.
+Поскольку документации сейчас нет -- желательно проконсультироваться при этом
+с кем-нибудь, кто их уже видел.
+Как минимум, нужно проверить имя сервера виртуальных машин vmhost (должно
+совпадать с именем компьютера, указанным при установки Ubuntu),
+определения extif в серверах router (IP адрес
+и gateway) и vmhost (mac address),
+чтобы они соответствовали действительным 
+(выдаваемым командами <code>ifconfig</code> и <code>route</code>).</p>
 </li>
 <li>
 <p>Запустите скрипт <code>./umbrella-install</code>. Он должен провести установку в
 автоматическом режиме, но может потребовать жёсткой (с обязательным 
 "Power off"/"Power on") перезагрузки виртуальной машины на которой Вы его
-запускаете. После перезагрузки запустите скрипт снова, он должен закончить
+запускаете. После перезагрузки запустите скрипт снова, он продолжит
 установку. Установка может занять несколько часов в зависимости от скорости
 жесткого диска.</p>
 </li>
