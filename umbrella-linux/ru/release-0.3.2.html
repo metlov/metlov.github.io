@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <meta charset="utf-8" />
+        <title>открытая версия 0.3.2</title>
+        <link rel="stylesheet" href="https://metlov.github.io/umbrella-linux/ru/../theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://metlov.github.io/umbrella-linux/ru/">Umbrella Linux home page </a></h1>
+                <nav><ul>
+                <li><a href="https://metlov.github.io/umbrella-linux/">English</a></li>
+                <li class="active"><a href="https://metlov.github.io/umbrella-linux/ru/">Русский</a></li>
+                <!-- separator -->
+                <li style="background-color: white; padding: 5px;">&nbsp</li>
+                    <li><a href="https://metlov.github.io/umbrella-linux/ru/about/">Что такое Umbrella Linux ?</a></li>
+                    <li><a href="https://metlov.github.io/umbrella-linux/ru/installation/">Установка</a></li>
+                    <li class="active"><a href="https://metlov.github.io/umbrella-linux/ru/category/posts.html">posts</a></li>
+                </ul>
+             </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.2.html" rel="bookmark"
+           title="Permalink to открытая версия 0.3.2">открытая версия 0.3.2</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-12-31T13:20:00+03:00">
+Опубликовано: 31-12-2018
+        </abbr>
+
+        <address class="vcard author">
+автор                         <a class="url fn" href="https://metlov.github.io/umbrella-linux/ru/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+        </address>
+<p>В <a href="https://metlov.github.io/umbrella-linux/ru/category/posts.html">posts</a>.</p>
+Переводы:
+        <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.3.2.html">en</a>
+
+</footer><!-- /.post-info -->      <p>Встречайте Umbrella Linux 0.3.2.</p>
+<p>Это промежуточный релиз на пути к поддержке Ubuntu "Bionic".</p>
+<p>Обновление работающей системы потребует:
+1) остановки bcfg2 сервера (<code>/etc/init.d/bcfg2-server stop</code>);
+2) сброса базы данных bcfg2-reports (DROP/CREATE);
+3) очиски кэша пакетов в /var/lib/bcfg2 (<code>rm Packages/cache/*</code>)
+4) обновления пакетов bcfg2 (<code>apt-get update</code>/<code>upgrade</code>)
+5) обновления /var/lib/bcfg2 (<code>git pull -a</code>);
+6) миграции SSL ключей и сертификатов при помощи скрипта в
+<code>Documentation/hacks/migration</code>;
+7) удаления SSLCA/ ;
+8) и, наконец, запуска bcfg2 сервера.</p>
+<h3>Список основных изменений:</h3>
+<ul>
+<li>Ubuntu 14.04 "Trusty" больше не поддерживается.</li>
+<li>пакет bcfg2 обновлён до версии 1.4.0pre2 с
+  <a href="https://github.com/metlov/bcfg2">дополнительными изменениями</a>.</li>
+<li>значительное ускорение установки новой системы.</li>
+</ul>
+<p>Чтобы попробовать Umbrella Linux смотрите 
+<a href="/umbrella-linux/ru/installation/">инструкции по установке</a>.</p>
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'umbrella-linux';
+        var disqus_identifier = 'release-0.3.2.html';
+        var disqus_url = 'https://metlov.github.io/umbrella-linux/ru/release-0.3.2.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//umbrella-linux.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body">
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+Этот сайт использует <a href="http://getpelican.com/">Pelican</a>, написанный на <a href="http://python.org">Python</a>.                </address><!-- /#about -->
+
+                <p>Тема создана <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, спасибо!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'umbrella-linux';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

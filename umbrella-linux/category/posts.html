@@ -27,7 +27,54 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/release-0.3.html">Public release 0.3</a></h1>
+                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/release-0.3.2.html">Public release 0.3.2</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-12-31T13:20:00+03:00">
+Published: Mon, 31 Dec 2018
+        </abbr>
+
+        <address class="vcard author">
+By                         <a class="url fn" href="https://metlov.github.io/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+        </address>
+<p>In <a href="https://metlov.github.io/umbrella-linux/category/posts.html">posts</a>.</p>
+Translations:
+        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.2.html">ru</a>
+
+</footer><!-- /.post-info --><p>I'm happy to announce the version 0.3.2 of the Umbrella Linux.</p>
+<p>This is an intermediate release before the Bionic port.</p>
+<p>Updating the running system will require: 
+1) stopping the bcfg2 server (<code>/etc/init.d/bcfg2-server stop</code>);
+2) resetting bcfg2-reports database (DROP/CREATE);
+3) clearing Packages cache in /var/lib/bcfg2 (<code>rm Packages/cache/*</code>)
+4) updating the bcfg2 packages (<code>apt-get update</code>/<code>upgrade</code>)
+5) updating the /var/lib/bcfg2 repository (<code>git pull -a</code>);
+6) migrating the SSL keys and certificates with the script in
+<code>Documentation/hacks/migration</code>;
+7) deleting SSLCA/ ;
+8) and, finally, starting the bcfg2 server again.</p>
+<h3>Summary of Changes:</h3>
+<ul>
+<li>removed Ubuntu 14.04 "Trusty" support.</li>
+<li>upgraded bcfg2 to the version 1.4.0pre2 with
+  <a href="https://github.com/metlov/bcfg2">Umbrella-specific patches</a>.</li>
+<li>substantial installation speed up.</li>
+</ul>
+<p>See the
+<a href="/umbrella-linux/installation/">installation instructions</a>
+to try Umbrella Linux yourself.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.3.2.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://metlov.github.io/umbrella-linux/release-0.3.html" rel="bookmark"
+                           title="Permalink to Public release 0.3">Public release 0.3</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2018-10-05T16:05:00+03:00">
 Published: Fri, 05 Oct 2018
@@ -40,39 +87,15 @@ By                         <a class="url fn" href="https://metlov.github.io/umbr
 Translations:
         <a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.html">ru</a>
 
-</footer><!-- /.post-info --><p>I'm happy to announce the version 0.3 of the Umbrella Linux.</p>
+</footer><!-- /.post-info -->                <p>I'm happy to announce the version 0.3 of the Umbrella Linux.</p>
 <p>This is, probably, the last Ubuntu Xenial based release. The work is underway on extending the support to Ubuntu Bionic.</p>
 <h3>Summary of Changes:</h3>
 <ul>
 <li>made the installer work with updated LXD (after bionic release) from xenial-backports.</li>
-<li>installer now works on top of freshly installed ubuntu-server (in addition to ubuntu-mini).</li>
-<li>x2go_thinclient now uses Debian "stretch".</li>
-<li>enabled cross-domain encrypted XMPP between two Umbrella Linux systems if they trust each other's root certificates.</li>
-<li>DNS and DHCP configuration is now generated from LDAP by own script instead of argonaut.</li>
-<li>removed DNS and DHCP configuration from LDAP and Fusion Directory, which greatly simplifies the host management.</li>
-<li>implemented host locking in Fusion Directory, which excludes the host both from DNS and DHCP configurations.</li>
-<li>new IP space review and address allocation script umbrella-hosts, installed on configuration server.</li>
-<li>new workstation registration script umbrella-addworkstation, installed on configuration server.</li>
-<li>switched to ulogd2 for firewall logging on router (this allows to see the firewall logs when router is an LXD container).</li>
-<li>new "maintenance mode" of the installer, which allows to (re-)create missing LXD containers on already installed Umbrella Linux system according to umbrella.xml specification.</li>
-<li>added optional backdoor server class, allowing remote itadmins to access the system in case the router is down.</li>
-<li>added optional DMZvpn server class and roamingworkstation profile to allow roaming Umbrella Linux systems (should be registered in Fusion Directory with location set to "roaming").</li>
-<li>new umbrella-mkinstall script on configuration server for generating Umbrella Linux installers for specific roaming workstations (allowing to initialize them remotely with proper VPN keys from a fresh Ubuntu Desktop install).</li>
-<li>more custom OSSEC rules to improve monitoring/reduce the level of OSSEC messages SPAM.</li>
-<li>numerous bugfixes and enhancements of both the system and the installer.</li>
-</ul>
-<h3>Hotfix vesion 0.3.1 -- Summary of Changes:</h3>
-<ul>
-<li>fix: 20_networks.py failure in case no DNScache was specified.</li>
-</ul>
-<p>See the
-<a href="/umbrella-linux/installation/">installation instructions</a>
-to try Umbrella Linux yourself.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.3.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<li>installer now works …</li></ul>
+                <a class="readmore" href="https://metlov.github.io/umbrella-linux/release-0.3.html">read more</a>
+<p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.3.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -98,7 +121,7 @@ Translations:
 <ul>
 <li>new "archiveworkstation" class, which works as workstation during the day, but maintains a set of system's backups during the night.</li>
 <li>secure all mysql server connections via SSL by default</li>
-<li>network topology can now ...</li></ul>
+<li>network topology can now be defined …</li></ul>
                 <a class="readmore" href="https://metlov.github.io/umbrella-linux/release-0.2.html">read more</a>
 <p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.2.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -126,7 +149,7 @@ Translations:
 <h3>State of the project:</h3>
 <p>The project is, actually, two years old (if we count only the time,
 when the its bcfg2 repository started to be parametrized). It was created
-from scratch in 2013 by me K.L ...</p>
+from scratch in 2013 by me K.L.M …</p>
                 <a class="readmore" href="https://metlov.github.io/umbrella-linux/release-0.1.html">read more</a>
 <p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.1.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -154,7 +177,7 @@ Translations:
 a local fully-featured user workspace and internet service platform with 
 as much externally accessible open standards based services as possible.
 For most individual home users the usual Linux Distribution (such as Debian,
-Ubuntu or Linux Mint) already helps to ...</p>
+Ubuntu or Linux Mint) already helps to …</p>
                 <a class="readmore" href="https://metlov.github.io/umbrella-linux/mission.html">read more</a>
 <p>There are <a href="https://metlov.github.io/umbrella-linux/mission.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>

@@ -27,7 +27,53 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.html">открытая версия 0.3</a></h1>
+                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.2.html">открытая версия 0.3.2</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-12-31T13:20:00+03:00">
+Опубликовано: 31-12-2018
+        </abbr>
+
+        <address class="vcard author">
+автор                         <a class="url fn" href="https://metlov.github.io/umbrella-linux/ru/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+        </address>
+<p>В <a href="https://metlov.github.io/umbrella-linux/ru/category/posts.html">posts</a>.</p>
+Переводы:
+        <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.3.2.html">en</a>
+
+</footer><!-- /.post-info --><p>Встречайте Umbrella Linux 0.3.2.</p>
+<p>Это промежуточный релиз на пути к поддержке Ubuntu "Bionic".</p>
+<p>Обновление работающей системы потребует:
+1) остановки bcfg2 сервера (<code>/etc/init.d/bcfg2-server stop</code>);
+2) сброса базы данных bcfg2-reports (DROP/CREATE);
+3) очиски кэша пакетов в /var/lib/bcfg2 (<code>rm Packages/cache/*</code>)
+4) обновления пакетов bcfg2 (<code>apt-get update</code>/<code>upgrade</code>)
+5) обновления /var/lib/bcfg2 (<code>git pull -a</code>);
+6) миграции SSL ключей и сертификатов при помощи скрипта в
+<code>Documentation/hacks/migration</code>;
+7) удаления SSLCA/ ;
+8) и, наконец, запуска bcfg2 сервера.</p>
+<h3>Список основных изменений:</h3>
+<ul>
+<li>Ubuntu 14.04 "Trusty" больше не поддерживается.</li>
+<li>пакет bcfg2 обновлён до версии 1.4.0pre2 с
+  <a href="https://github.com/metlov/bcfg2">дополнительными изменениями</a>.</li>
+<li>значительное ускорение установки новой системы.</li>
+</ul>
+<p>Чтобы попробовать Umbrella Linux смотрите 
+<a href="/umbrella-linux/ru/installation/">инструкции по установке</a>.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.2.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Следующие статьи</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.html" rel="bookmark"
+                           title="Permalink to открытая версия 0.3">открытая версия 0.3</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2018-10-05T16:05:00+03:00">
 Опубликовано: 05-10-2018
@@ -40,39 +86,16 @@
 Переводы:
         <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.3.html">en</a>
 
-</footer><!-- /.post-info --><p>Рад представить версию 0.3 Umbrella Linux.</p>
+</footer><!-- /.post-info -->                <p>Рад представить версию 0.3 Umbrella Linux.</p>
 <p>Это, скорее всего, последний релиз, базирующийся на Ubuntu Xenial. Поддержка Ubuntu Bionic уже в разработке.</p>
 <h3>Список основных изменений:</h3>
 <ul>
 <li>программа установки теперь поддерживает обновленный (после выхода Bionic) LXD из xenial-backports.</li>
 <li>программа установки теперь поддерживает установку поверх ubuntu-server (а не только ubuntu-mini, как раньше).</li>
-<li>тонкий клиент x2go теперь разворачивается на базе Debian "stretch".</li>
-<li>реализовано шифрованное кросс-доменное соединение по протоколу XMPP между двумя системами Umbrella Linux, если они доверяют корневым сертификатам друг друга.</li>
-<li>конфигурация DNS и DHCP теперь генерируется собственным скриптом вместо argonaut.</li>
-<li>модули конфигурации DNS и DHCP в Fusion Directory больше не используются, что значительно упрощает регистрацию рабочих станций.</li>
-<li>реализована блокировка рабочих станций в Fusion Directory, которая исключает их из конфигурации DNS и DHCP.</li>
-<li>новая утилита по обзору и выделению свободных IP адресов umbrella-hosts, которая устанавливается на конфигурационный сервер.</li>
-<li>новая утилита для регистрации рабочих станций umbrella-addworkstation, которая устанавливается на конфигурационный сервер.</li>
-<li>журнал сетевого экрана теперь ведётся при помощи ulogd2 (что позволяет видеть его при установке в LXD контейнеры)</li>
-<li>новый "режим обслуживания" в программе установки, который позволяет (пере)создать отсутствующие (но сконфигурированные в umbrella.xml) LXD контейнеры.</li>
-<li>новый класс сервера "backdoor", который открывает удалённым администраторам доступ к системе в случае отказа основного маршрутизатора или ошибок в сетевом экране.</li>
-<li>новый класс сервера "DMZvpn" и профиль "roamingworkstation" для рабочих станций, которые позволяют создание удалённых рабочих станций (их нужно регистрировать в Fusion Directory с location="roaming").</li>
-<li>новая утилита umbrella-mkinstall на конфигурационном сервере, которая позволяет генерировать индивидуальные программы установки для удалённых рабочих станций (с собственными VPN ключами), разворачивающие их на базе Ubuntu Desktop.</li>
-<li>more custom OSSEC rules to improve monitoring/reduce the level of OSSEC messages SPAM.</li>
-<li>добавлены правила в OSSEC для улучшения качества мониторинга/уменьшения потока генерируемых оповещений.</li>
-<li>многочисленные исправления и улучшения самой системы и программы установки.</li>
-</ul>
-<h3>Версия 0.3.1 -- Список изменений:</h3>
-<ul>
-<li>исправление: сбой в работе 20_networks.py если параметр DNScache не указан в umbrella.xml .</li>
-</ul>
-<p>Чтобы попробовать Umbrella Linux смотрите 
-<a href="/umbrella-linux/ru/installation/">инструкции по установке</a>.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Следующие статьи</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<li>тонкий …</li></ul>
+                <a class="readmore" href="https://metlov.github.io/umbrella-linux/ru/release-0.3.html">далее</a>
+<p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -98,7 +121,7 @@
 <ul>
 <li>новый класс "archiveworkstation": днём -- рабочая станция, ночью собирает резервные копии всех серверов системы.</li>
 <li>все соединения с mysql серверами теперь защищены при помощи SSL.</li>
-<li>теперь можно определить топологию локальной сети в файле lan_topology.xml , после чего Nagios будет автоматически сконфигурирован так ...</li></ul>
+<li>теперь можно определить топологию локальной сети в файле lan_topology.xml , после чего Nagios будет автоматически сконфигурирован так …</li></ul>
                 <a class="readmore" href="https://metlov.github.io/umbrella-linux/ru/release-0.2.html">далее</a>
 <p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.2.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -127,7 +150,7 @@
 <p>Несмотря на то, что первая открытая версия выходит сегодня, проекту
 Umbrella Linux на самом деле уже несколько лет. Он был создан в 2013 с нуля
 мной (К.Л.М.) и двумя моими друзьями. На сегодня Umbrella Linux уже
-развёрнут в ...</p>
+развёрнут в …</p>
                 <a class="readmore" href="https://metlov.github.io/umbrella-linux/ru/release-0.1.html">далее</a>
 <p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.1.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
