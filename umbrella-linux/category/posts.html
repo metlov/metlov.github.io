@@ -27,7 +27,57 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/release-0.3.2.html">Public release 0.3.2</a></h1>
+                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/release-0.4.0.html">Public release 0.4.0</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2019-08-08T15:35:00+03:00">
+Published: Thu, 08 Aug 2019
+        </abbr>
+
+        <address class="vcard author">
+By                         <a class="url fn" href="https://metlov.github.io/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+        </address>
+<p>In <a href="https://metlov.github.io/umbrella-linux/category/posts.html">posts</a>.</p>
+Translations:
+        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.0.html">ru</a>
+
+</footer><!-- /.post-info --><p>I'm happy to announce the version 0.4.0 of the Umbrella Linux.</p>
+<p>This is the first release, featuring the Ubuntu 18.04 "Bionic" support.
+It also supports legacy systems, based on Ubuntu 16.04 "Xenial".</p>
+<h3>Summary of Changes:</h3>
+<ul>
+<li>Ubuntu 18.04 "Bionic" support.</li>
+<li>More documentation and installation examples (see Documentation/).</li>
+<li>Enabled new features of spamassasin (&gt;=3.30).</li>
+<li>Language support selection groups to streamline the language
+  support configuration of individual bundles.</li>
+<li>OSSEC system scan is now scheduled randomly once per day.</li>
+<li>Ejabberd now uses kernel keyring for Kerberos credentials.</li>
+<li>Redesigned PAM stack on "Bionic", which is now based around sssd.</li>
+<li>Network configuration on "Bionic" is now based on netplan.io,
+  while "Xenial" stays with ifconfig.</li>
+<li>Mozilla Firefox is now the default WWW browser on "Bionic", while
+  "Xenial" version stays with Chromium.</li>
+<li>Ubuntu 16.04 "Xenial" legacy support.</li>
+<li>Switched to HWE 16.04 kernel and x.org on "Xenial".</li>
+<li>Numerous small bugfixes.</li>
+<li>Installation speed up with the help of eatmydata.</li>
+</ul>
+<p>See the
+<a href="/umbrella-linux/installation/">installation instructions</a>
+to try Umbrella Linux yourself.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.4.0.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://metlov.github.io/umbrella-linux/release-0.3.2.html" rel="bookmark"
+                           title="Permalink to Public release 0.3.2">Public release 0.3.2</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2018-12-31T13:20:00+03:00">
 Published: Mon, 31 Dec 2018
@@ -40,33 +90,15 @@ By                         <a class="url fn" href="https://metlov.github.io/umbr
 Translations:
         <a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.2.html">ru</a>
 
-</footer><!-- /.post-info --><p>I'm happy to announce the version 0.3.2 of the Umbrella Linux.</p>
+</footer><!-- /.post-info -->                <p>I'm happy to announce the version 0.3.2 of the Umbrella Linux.</p>
 <p>This is an intermediate release before the Bionic port.</p>
 <p>Updating the running system will require: 
 1) stopping the bcfg2 server (<code>/etc/init.d/bcfg2-server stop</code>);
 2) resetting bcfg2-reports database (DROP/CREATE);
-3) clearing Packages cache in /var/lib/bcfg2 (<code>rm Packages/cache/*</code>)
-4) updating the bcfg2 packages (<code>apt-get update</code>/<code>upgrade</code>)
-5) updating the /var/lib/bcfg2 repository (<code>git pull -a</code>);
-6) migrating the SSL keys and certificates with the script in
-<code>Documentation/hacks/migration</code>;
-7) deleting SSLCA/ ;
-8) and, finally, starting the bcfg2 server again.</p>
-<h3>Summary of Changes:</h3>
-<ul>
-<li>removed Ubuntu 14.04 "Trusty" support.</li>
-<li>upgraded bcfg2 to the version 1.4.0pre2 with
-  <a href="https://github.com/metlov/bcfg2">Umbrella-specific patches</a>.</li>
-<li>substantial installation speed up.</li>
-</ul>
-<p>See the
-<a href="/umbrella-linux/installation/">installation instructions</a>
-to try Umbrella Linux yourself.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.3.2.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+3) clearing Packages cache in /var …</p>
+                <a class="readmore" href="https://metlov.github.io/umbrella-linux/release-0.3.2.html">read more</a>
+<p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.3.2.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>

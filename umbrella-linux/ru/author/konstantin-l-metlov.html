@@ -27,7 +27,58 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.2.html">открытая версия 0.3.2</a></h1>
+                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.0.html">открытая версия 0.4.0</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2019-08-08T15:35:00+03:00">
+Опубликовано: 08-08-2019
+        </abbr>
+
+        <address class="vcard author">
+автор                         <a class="url fn" href="https://metlov.github.io/umbrella-linux/ru/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+        </address>
+<p>В <a href="https://metlov.github.io/umbrella-linux/ru/category/posts.html">posts</a>.</p>
+Переводы:
+        <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.4.0.html">en</a>
+
+</footer><!-- /.post-info --><p>Встречайте Umbrella Linux 0.4.0.</p>
+<p>Это первый релиз, включающий поддержку Ubuntu 18.04 "Bionic".
+Он так же включает поддержку существующих систем, базирующихся
+на Ubuntu 16.04 "Xenial"</p>
+<h3>Список основных изменений:</h3>
+<ul>
+<li>Поддержка Ubuntu 18.04 "Bionic".</li>
+<li>Больше документации и примеров конфигураций систем (см. Documentation/).</li>
+<li>Подключены новые модули spamassasin версий &gt;=3.30.</li>
+<li>Группы в bcfg2 для выбора языковой поддержки, упрощающие поддержку
+  многоязычных конфигураций индивидуальными модулями (bundles).</li>
+<li>OSSEC теперь выполняет сканирование файловой системы один раз в день (в 
+  случайно выбранное локальное ночное время).</li>
+<li>Ejabberd теперь хранит билетики Kerberos в связке ключей ядра Linux.</li>
+<li>PAM стек на "Bionic" теперь базируется на sssd.</li>
+<li>конфигурация сетевых устройств в "Bionic" теперь задаётся при помощи
+  netplan.io, "Xenial" всё так же использует ifconfig.</li>
+<li>рабочие станции на "Bionic" теперь используют Mozilla Firefox в качестве
+  браузера по умолчанию, "Xenial" всё так же использует Chromium.</li>
+<li>Поддержка Ubuntu 16.04 "Xenial" для существующих систем.</li>
+<li>Переход на ядро и x.org HWE 16.04 на "Xenial".</li>
+<li>Многочисленные исправления.</li>
+<li>Ускорение установки при помощи eatmydata.</li>
+</ul>
+<p>Чтобы попробовать Umbrella Linux смотрите 
+<a href="/umbrella-linux/ru/installation/">инструкции по установке</a>.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.0.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Следующие статьи</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.2.html" rel="bookmark"
+                           title="Permalink to открытая версия 0.3.2">открытая версия 0.3.2</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2018-12-31T13:20:00+03:00">
 Опубликовано: 31-12-2018
@@ -40,32 +91,16 @@
 Переводы:
         <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.3.2.html">en</a>
 
-</footer><!-- /.post-info --><p>Встречайте Umbrella Linux 0.3.2.</p>
+</footer><!-- /.post-info -->                <p>Встречайте Umbrella Linux 0.3.2.</p>
 <p>Это промежуточный релиз на пути к поддержке Ubuntu "Bionic".</p>
 <p>Обновление работающей системы потребует:
 1) остановки bcfg2 сервера (<code>/etc/init.d/bcfg2-server stop</code>);
 2) сброса базы данных bcfg2-reports (DROP/CREATE);
 3) очиски кэша пакетов в /var/lib/bcfg2 (<code>rm Packages/cache/*</code>)
-4) обновления пакетов bcfg2 (<code>apt-get update</code>/<code>upgrade</code>)
-5) обновления /var/lib/bcfg2 (<code>git pull -a</code>);
-6) миграции SSL ключей и сертификатов при помощи скрипта в
-<code>Documentation/hacks/migration</code>;
-7) удаления SSLCA/ ;
-8) и, наконец, запуска bcfg2 сервера.</p>
-<h3>Список основных изменений:</h3>
-<ul>
-<li>Ubuntu 14.04 "Trusty" больше не поддерживается.</li>
-<li>пакет bcfg2 обновлён до версии 1.4.0pre2 с
-  <a href="https://github.com/metlov/bcfg2">дополнительными изменениями</a>.</li>
-<li>значительное ускорение установки новой системы.</li>
-</ul>
-<p>Чтобы попробовать Umbrella Linux смотрите 
-<a href="/umbrella-linux/ru/installation/">инструкции по установке</a>.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.2.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Следующие статьи</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+4) обновления пакетов bcfg2 …</p>
+                <a class="readmore" href="https://metlov.github.io/umbrella-linux/ru/release-0.3.2.html">далее</a>
+<p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.2.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
