@@ -27,7 +27,50 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.0.html">открытая версия 0.4.0</a></h1>
+                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.1.html">открытая версия 0.4.1</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2020-01-18T15:55:00+03:00">
+Опубликовано: 18-01-2020
+        </abbr>
+
+        <address class="vcard author">
+автор                         <a class="url fn" href="https://metlov.github.io/umbrella-linux/ru/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+        </address>
+<p>В <a href="https://metlov.github.io/umbrella-linux/ru/category/posts.html">posts</a>.</p>
+Переводы:
+        <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.4.1.html">en</a>
+
+</footer><!-- /.post-info --><p>Встречайте Umbrella Linux 0.4.1.</p>
+<p>Основные изменения в этой версии связаны с улучшениями работы системы в LXD контейнерах.
+Поддерживаются Ubuntu 18.04 "Bionic" и Ubuntu 16.04 "Xenial", но автоматическая программа установки
+тестировалась только на "Bionic".</p>
+<h3>Список основных изменений:</h3>
+<ul>
+<li>LXD версия устанавливается и работает в непривилегированные LXD контейнеры за исключением NFS сервера (его контейнер должен быть привилегированным).</li>
+<li>LXD версия теперь использует mount --bind вместо NFS для монтирования домашних директорий в контейнерах (рабочие станции всё так же используют NFS).</li>
+<li>Возможность открыть доступ к почтовому серверу по протоколам SMTPS и IMAPS (настраивается в firewall.xml).</li>
+<li>Авто-конфигурация Mozilla Thunderbird для всех альтернативных доменов как изнутри локальной сети, так и извне (если внешний доступ к почте разрешен)</li>
+<li>Улучшена конфигурация чёрных списков на основе DNS для SMTP сервера.</li>
+<li>Улучшения мониторинга состояния системы при помощи Nagios.</li>
+<li>Больше правил в OSSEC для отключения несущественных уведомлений.</li>
+<li>Улучшения в поддержке Ubuntu 16.04 "Xenial".</li>
+<li>и множество других незначительных исправлений.</li>
+</ul>
+<p>Чтобы попробовать Umbrella Linux смотрите 
+<a href="/umbrella-linux/ru/installation/">инструкции по установке</a>.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.1.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Следующие статьи</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.0.html" rel="bookmark"
+                           title="Permalink to открытая версия 0.4.0">открытая версия 0.4.0</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2019-08-08T15:35:00+03:00">
 Опубликовано: 08-08-2019
@@ -40,7 +83,7 @@
 Переводы:
         <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.4.0.html">en</a>
 
-</footer><!-- /.post-info --><p>Встречайте Umbrella Linux 0.4.0.</p>
+</footer><!-- /.post-info -->                <p>Встречайте Umbrella Linux 0.4.0.</p>
 <p>Это первый релиз, включающий поддержку Ubuntu 18.04 "Bionic".
 Он так же включает поддержку существующих систем, базирующихся
 на Ubuntu 16.04 "Xenial"</p>
@@ -48,29 +91,10 @@
 <ul>
 <li>Поддержка Ubuntu 18.04 "Bionic".</li>
 <li>Больше документации и примеров конфигураций систем (см. Documentation/).</li>
-<li>Подключены новые модули spamassasin версий &gt;=3.30.</li>
-<li>Группы в bcfg2 для выбора языковой поддержки, упрощающие поддержку
-  многоязычных конфигураций индивидуальными модулями (bundles).</li>
-<li>OSSEC теперь выполняет сканирование файловой системы один раз в день (в 
-  случайно выбранное локальное ночное время).</li>
-<li>Ejabberd теперь хранит билетики Kerberos в связке ключей ядра Linux.</li>
-<li>PAM стек на "Bionic" теперь базируется на sssd.</li>
-<li>конфигурация сетевых устройств в "Bionic" теперь задаётся при помощи
-  netplan.io, "Xenial" всё так же использует ifconfig.</li>
-<li>рабочие станции на "Bionic" теперь используют Mozilla Firefox в качестве
-  браузера по умолчанию, "Xenial" всё так же использует Chromium.</li>
-<li>Поддержка Ubuntu 16.04 "Xenial" для существующих систем.</li>
-<li>Переход на ядро и x.org HWE 16.04 на "Xenial".</li>
-<li>Многочисленные исправления.</li>
-<li>Ускорение установки при помощи eatmydata.</li>
-</ul>
-<p>Чтобы попробовать Umbrella Linux смотрите 
-<a href="/umbrella-linux/ru/installation/">инструкции по установке</a>.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.0.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Следующие статьи</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<li>Подключены новые модули spamassasin версий &gt;=3 …</li></ul>
+                <a class="readmore" href="https://metlov.github.io/umbrella-linux/ru/release-0.4.0.html">далее</a>
+<p>There are <a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.0.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
