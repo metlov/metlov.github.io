@@ -45,28 +45,28 @@ By                         <a class="url fn" href="https://metlov.github.io/umbr
 Translations:
         <a href="https://metlov.github.io/umbrella-linux/ru/release-0.3.html">ru</a>
 
-</footer><!-- /.post-info -->      <p>I'm happy to announce the version 0.3 of the Umbrella Linux.</p>
+</footer><!-- /.post-info -->      <p>I&rsquo;m happy to announce the version 0.3 of the Umbrella Linux.</p>
 <p>This is, probably, the last Ubuntu Xenial based release. The work is underway on extending the support to Ubuntu Bionic.</p>
 <h3>Summary of Changes:</h3>
 <ul>
 <li>made the installer work with updated LXD (after bionic release) from xenial-backports.</li>
 <li>installer now works on top of freshly installed ubuntu-server (in addition to ubuntu-mini).</li>
-<li>x2go_thinclient now uses Debian "stretch".</li>
-<li>enabled cross-domain encrypted XMPP between two Umbrella Linux systems if they trust each other's root certificates.</li>
+<li>x2go_thinclient now uses Debian &ldquo;stretch&rdquo;.</li>
+<li>enabled cross-domain encrypted XMPP between two Umbrella Linux systems if they trust each other&rsquo;s root certificates.</li>
 <li>DNS and DHCP configuration is now generated from LDAP by own script instead of argonaut.</li>
 <li>removed DNS and DHCP configuration from LDAP and Fusion Directory, which greatly simplifies the host management.</li>
 <li>implemented host locking in Fusion Directory, which excludes the host both from DNS and DHCP configurations.</li>
 <li>new IP space review and address allocation script umbrella-hosts, installed on configuration server.</li>
 <li>new workstation registration script umbrella-addworkstation, installed on configuration server.</li>
 <li>switched to ulogd2 for firewall logging on router (this allows to see the firewall logs when router is an LXD container).</li>
-<li>new "maintenance mode" of the installer, which allows to (re-)create missing LXD containers on already installed Umbrella Linux system according to umbrella.xml specification.</li>
+<li>new &ldquo;maintenance mode&rdquo; of the installer, which allows to (re-)create missing LXD containers on already installed Umbrella Linux system according to umbrella.xml specification.</li>
 <li>added optional backdoor server class, allowing remote itadmins to access the system in case the router is down.</li>
-<li>added optional DMZvpn server class and roamingworkstation profile to allow roaming Umbrella Linux systems (should be registered in Fusion Directory with location set to "roaming").</li>
+<li>added optional DMZvpn server class and roamingworkstation profile to allow roaming Umbrella Linux systems (should be registered in Fusion Directory with location set to &ldquo;roaming&rdquo;).</li>
 <li>new umbrella-mkinstall script on configuration server for generating Umbrella Linux installers for specific roaming workstations (allowing to initialize them remotely with proper VPN keys from a fresh Ubuntu Desktop install).</li>
 <li>more custom OSSEC rules to improve monitoring/reduce the level of OSSEC messages SPAM.</li>
 <li>numerous bugfixes and enhancements of both the system and the installer.</li>
 </ul>
-<h3>Hotfix vesion 0.3.1 -- Summary of Changes:</h3>
+<h3>Hotfix vesion 0.3.1 &ndash; Summary of Changes:</h3>
 <ul>
 <li>fix: 20_networks.py failure in case no DNScache was specified.</li>
 </ul>

@@ -30,7 +30,7 @@
         <a href="https://metlov.github.io/umbrella-linux/ru/installation/">ru</a>
 
     <p>First, please think twice before installing. Do you really need it ?</p>
-<p>There isn't much information about Umbrella Linux right now. The
+<p>There isn&rsquo;t much information about Umbrella Linux right now. The
 chances are that you do not know what you are doing. In this case
 stop ! Talk to somebody, who can explain things to you (IRL or via
 the Internet), or wait until this site contains more information.</p>
@@ -38,7 +38,7 @@ the Internet), or wait until this site contains more information.</p>
 virtual machine.</p>
 <ol>
 <li>
-<p>Download the Ubuntu 18.04 "Bionic" minimal installation image 
+<p>Download the Ubuntu 18.04 &ldquo;Bionic&rdquo; minimal installation image 
 (either <a href="http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-i386/current/images/netboot/mini.iso">32-bit</a>
 or <a href="http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso">64-bit</a>
 version) and save it to your hard drive. Installation over a freshly installed
@@ -55,7 +55,7 @@ please ensure that its promiscous mode is allowed.</p>
 <p><em>Optional:</em> it can also be a good idea to have a secondary network card
 installed on your Umbrella Server, which will manage the network behind it
 (installing and using workstations and terminals). Without the secondary
-network card (or other means to connect to the "pub" bridge) you will only
+network card (or other means to connect to the &ldquo;pub&rdquo; bridge) you will only
 be able to access your new system as if you are outside of it.</p>
 </li>
 <li>
@@ -68,13 +68,13 @@ Create some temporary user with a simple password.</p>
 <p>After the installation is finished, log in as a temporary user you have
 created. Use the <code>sudo -i</code> command to become root and download
 all the files from <a href="/umbrella-linux/installer/">this web directory</a> to your
-root's home ( e.g. with
+root&rsquo;s home ( e.g. with
 <code>wget -e robots=off -R 'index.html*' -r -np -nd -nc -l 1 https://metlov.github.io/umbrella-linux/installer/</code> ).
 These are all simple text files and <code>./umbrella-install</code>
 is a bash script, please <code>chmod +x ./umbrella-install</code> after downloading.
 If you wish to generate unique passwords and certificates for your system
 (it is necessary, for example, if you change the system name or location
-in umbrella.xml) -- delete the <code>umbrella_keys.xml</code> file (it will be recreated
+in umbrella.xml) &ndash; delete the <code>umbrella_keys.xml</code> file (it will be recreated
 by the installer with your own settings). Do not install any additional
 packages at this point (may be except <code>mc</code> and <code>aptitude</code>).</p>
 </li>
@@ -89,7 +89,7 @@ Since there is no documentation yet, you will need to consult somebody
 if you want to do some non-trivial changes.</p>
 </li>
 <li>
-<p>Run the "./umbrella-install" script you've also downloaded on the previous
+<p>Run the &ldquo;./umbrella-install&rdquo; script you&rsquo;ve also downloaded on the previous
 step. It should do everything automatically. It may take several hours to
 complete depending on the speed of your hard drive.
 Ejoy your new Umbrella Linux system !</p>
@@ -100,7 +100,7 @@ Ejoy your new Umbrella Linux system !</p>
 the first interface of the VM to be able to connect to it. You can log in
 as a first admin user, specified in umbrella.xml with a simple password,
 communicated to you at the end of the installation process. Then you can either
-connect via ssh or via X2Go client (be sure to select "Custom desktop" in sesion
+connect via ssh or via X2Go client (be sure to select &ldquo;Custom desktop&rdquo; in sesion
 type and type there <code>umbrella-session</code>). From the graphical session you can
 visit <code>https://gosa.&lt;your-domain&gt;/</code> in a browser for Fusion Directory
 interface to your users, groups and workstations. Then you can connect a NAT

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Public release 0.2</title>
+        <title>Public release 0.4.3</title>
         <link rel="stylesheet" href="https://metlov.github.io/umbrella-linux/theme/css/main.css" />
 
         <!--[if IE]>
@@ -28,14 +28,14 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="https://metlov.github.io/umbrella-linux/release-0.2.html" rel="bookmark"
-           title="Permalink to Public release 0.2">Public release 0.2</a></h1>
+        <a href="https://metlov.github.io/umbrella-linux/release-0.4.3.html" rel="bookmark"
+           title="Permalink to Public release 0.4.3">Public release 0.4.3</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2018-04-18T20:02:00+03:00">
-Published: Wed, 18 Apr 2018
+        <abbr class="published" title="2021-12-20T18:52:00+03:00">
+Published: Mon, 20 Dec 2021
         </abbr>
 
         <address class="vcard author">
@@ -43,27 +43,25 @@ By                         <a class="url fn" href="https://metlov.github.io/umbr
         </address>
 <p>In <a href="https://metlov.github.io/umbrella-linux/category/posts.html">posts</a>.</p>
 Translations:
-        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.2.html">ru</a>
+        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.3.html">ru</a>
 
-</footer><!-- /.post-info -->      <p>I&rsquo;m happy to announce the version 0.2 of the Umbrella Linux.</p>
+</footer><!-- /.post-info -->      <p>This long-awaited release of the Umbrella Linux is focused on
+migration from older Ubuntu 16.04 Xenial based systems. It still supports
+both Ubuntu Xenial and Ubuntu Bionic (as well as hererogenous environment,
+consisting of those), but includes migration scripts for upgrading the
+Umbrella hosts. The instructions are in the file
+<code>Documentation/1604_to_1804.txt</code>.</p>
+<p>The next major release will drop the support of Ubuntu 16.04 Xenial. Please
+do not forget to upgrade your systems before that.</p>
 <h3>Summary of Changes:</h3>
 <ul>
-<li>new &ldquo;archiveworkstation&rdquo; class, which works as workstation during the day, but maintains a set of system&rsquo;s backups during the night.</li>
-<li>secure all mysql server connections via SSL by default</li>
-<li>network topology can now be defined via lan_topology.xml and the link/switch status will be automatically monitored with Nagios.</li>
-<li>&ldquo;localfsworkstation&rdquo; class improvements for the completely offline use case.</li>
-<li>configuration of trusted CAs registry via firewall.xml &ndash; a restricted set of trusted CAs, which exists in parallel with the well known CA list.</li>
-<li>(incomplete) initial implementation of XMPP federation with trusted systems.</li>
-<li>(incomplete) initial implementation of PBX (Asterisk) federation.</li>
-<li>(incomplete) initial implementation of Invenio host in DMZ (all the dependencies are installed and configured, but Invenio itself needs to be installed automatically).</li>
-<li>rewrote domain definitions in umbrella.xml, now Umbrella can be configured to host sub-domains and be a slave DNS server.</li>
-<li>rewrote user&rsquo;s skel (initial home directory contents) handling.</li>
-<li>automatic maintenance of CRL for Umbrella-generated x509 certificates.</li>
-<li>dynamic host configuration, based on their subnet.</li>
-<li>rewrote physical/virtual/container detection groups.</li>
-<li>install memtest86+ on physical machines.</li>
-<li>more custom OSSEC rules to improve monitoring/reduce the level of OSSEC messages SPAM.</li>
-<li>numerous bugfixes and enhancements of both the system and the installer.</li>
+<li>Migration scripts to rebase the individual hosts from Ubuntu Xenial to Ubuntu Bionic.</li>
+<li>Switch to Horde for Webmail handling instead of Squirrelmail.</li>
+<li>The monitor host now automatically configures MRTG for router flow monitoring.</li>
+<li>Removed the <code>&lt;net/&gt;</code> tag in umbrella.xml, allowing for more flexible network configuration.</li>
+<li>Specify send-only or receive-only E-mail robots in firewall.xml.</li>
+<li>More OSSEC spam clean up.</li>
+<li>Minor bugfixes.</li>
 </ul>
 <p>See the
 <a href="/umbrella-linux/installation/">installation instructions</a>
@@ -74,8 +72,8 @@ to try Umbrella Linux yourself.</p>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = 'umbrella-linux';
-        var disqus_identifier = 'release-0.2.html';
-        var disqus_url = 'https://metlov.github.io/umbrella-linux/release-0.2.html';
+        var disqus_identifier = 'release-0.4.3.html';
+        var disqus_url = 'https://metlov.github.io/umbrella-linux/release-0.4.3.html';
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//umbrella-linux.disqus.com/embed.js';

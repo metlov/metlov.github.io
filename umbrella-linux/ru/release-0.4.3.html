@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
         <meta charset="utf-8" />
-        <title>открытая версия 0.4.0</title>
+        <title>открытая версия 0.4.3</title>
         <link rel="stylesheet" href="https://metlov.github.io/umbrella-linux/ru/../theme/css/main.css" />
 
         <!--[if IE]>
@@ -28,14 +28,14 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.0.html" rel="bookmark"
-           title="Permalink to открытая версия 0.4.0">открытая версия 0.4.0</a></h1>
+        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.3.html" rel="bookmark"
+           title="Permalink to открытая версия 0.4.3">открытая версия 0.4.3</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2019-08-08T15:35:00+03:00">
-Опубликовано: 08-08-2019
+        <abbr class="published" title="2021-12-20T18:52:00+03:00">
+Опубликовано: 20-12-2021
         </abbr>
 
         <address class="vcard author">
@@ -43,33 +43,29 @@
         </address>
 <p>В <a href="https://metlov.github.io/umbrella-linux/ru/category/posts.html">posts</a>.</p>
 Переводы:
-        <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.4.0.html">en</a>
+        <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.4.3.html">en</a>
 
-</footer><!-- /.post-info -->      <p>Встречайте Umbrella Linux 0.4.0.</p>
-<p>Это первый релиз, включающий поддержку Ubuntu 18.04 &ldquo;Bionic&rdquo;.
-Он так же включает поддержку существующих систем, базирующихся
-на Ubuntu 16.04 &ldquo;Xenial&rdquo;</p>
-<h3>Список основных изменений:</h3>
+</footer><!-- /.post-info -->      <p>Главное в этой версии &mdash; возможность автоматической миграции систем,
+базирующихся на Ubuntu 16.04 Xenial. Она поддерживает Ubuntu Xenial,
+Ubuntu Bionic и произвольную гетерогенную комбинацию из этих версий
+Ubuntu Linux, но включает в себя скрипты для (полу-)автоматического
+обновления серверов и рабочих станций с Ubuntu Xenial до Ubuntu Bionic
+при сохранении функциональности и настроек всей системы в целом.
+Инструкции можно найти в файле
+<code>Documentation/1604_to_1804.txt</code>.</p>
+<p>Заметьте, что следующая версия Umbrella Linux больше не будет поддерживать
+Ubuntu 16.04 Xenial. Не забудьте обновить свои системы до её выхода.</p>
+<h3>Summary of Changes:</h3>
 <ul>
-<li>Поддержка Ubuntu 18.04 &ldquo;Bionic&rdquo;.</li>
-<li>Больше документации и примеров конфигураций систем (см. Documentation/).</li>
-<li>Подключены новые модули spamassasin версий &gt;=3.30.</li>
-<li>Группы в bcfg2 для выбора языковой поддержки, упрощающие поддержку
-  многоязычных конфигураций индивидуальными модулями (bundles).</li>
-<li>OSSEC теперь выполняет сканирование файловой системы один раз в день (в 
-  случайно выбранное локальное ночное время).</li>
-<li>Ejabberd теперь хранит билетики Kerberos в связке ключей ядра Linux.</li>
-<li>PAM стек на &ldquo;Bionic&rdquo; теперь базируется на sssd.</li>
-<li>конфигурация сетевых устройств в &ldquo;Bionic&rdquo; теперь задаётся при помощи
-  netplan.io, &ldquo;Xenial&rdquo; всё так же использует ifconfig.</li>
-<li>рабочие станции на &ldquo;Bionic&rdquo; теперь используют Mozilla Firefox в качестве
-  браузера по умолчанию, &ldquo;Xenial&rdquo; всё так же использует Chromium.</li>
-<li>Поддержка Ubuntu 16.04 &ldquo;Xenial&rdquo; для существующих систем.</li>
-<li>Переход на ядро и x.org HWE 16.04 на &ldquo;Xenial&rdquo;.</li>
-<li>Многочисленные исправления.</li>
-<li>Ускорение установки при помощи eatmydata.</li>
+<li>Скрипты индивидуальной миграции серверов и рабочих станций с Ubuntu Xenial на Ubuntu Bionic.</li>
+<li>Переход на Horde (вместо Squirrelmail) для организации удалённого доступа к электронной почте.</li>
+<li>Сервер мониторинга теперь автоматически конфигурирует MRTG для отслеживания загрузки внешнего канала связи.</li>
+<li>Убран тег <code>&lt;net/&gt;</code> из umbrella.xml, что допускает более гибкую конфигурацию подсетей.</li>
+<li>Возможность конфигурировать в firewall.xml только получающих или только отправляющих письма почтовых роботов.</li>
+<li>Дополнительные правила для OSSEC, отключающие несущественные уведомления.</li>
+<li>Незначительные исправления.</li>
 </ul>
-<p>Чтобы попробовать Umbrella Linux смотрите 
+<p>Чтобы попробовать Umbrella Linux смотрите
 <a href="/umbrella-linux/ru/installation/">инструкции по установке</a>.</p>
     </div><!-- /.entry-content -->
     <div class="comments">
@@ -77,8 +73,8 @@
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = 'umbrella-linux';
-        var disqus_identifier = 'release-0.4.0.html';
-        var disqus_url = 'https://metlov.github.io/umbrella-linux/ru/release-0.4.0.html';
+        var disqus_identifier = 'release-0.4.3.html';
+        var disqus_url = 'https://metlov.github.io/umbrella-linux/ru/release-0.4.3.html';
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//umbrella-linux.disqus.com/embed.js';
