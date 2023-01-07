@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
         <meta charset="utf-8" />
-        <title>открытая версия 0.4.3</title>
+        <title>открытая версия 0.5.0</title>
         <link rel="stylesheet" href="https://metlov.github.io/umbrella-linux/ru/../theme/css/main.css" />
 
         <!--[if IE]>
@@ -29,14 +29,14 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.3.html" rel="bookmark"
-           title="Permalink to открытая версия 0.4.3">открытая версия 0.4.3</a></h1>
+        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.5.0.html" rel="bookmark"
+           title="Permalink to открытая версия 0.5.0">открытая версия 0.5.0</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2021-12-20T18:52:00+03:00">
-Опубликовано: 20-12-2021
+        <abbr class="published" title="2023-01-07T17:33:00+03:00">
+Опубликовано: 07-01-2023
         </abbr>
 
         <address class="vcard author">
@@ -44,38 +44,46 @@
         </address>
 <p>В <a href="https://metlov.github.io/umbrella-linux/ru/category/posts.html">posts</a>.</p>
 Переводы:
-        <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.4.3.html">en</a>
+        <a href="https://metlov.github.io/umbrella-linux/ru/../release-0.5.0.html">en</a>
 
-</footer><!-- /.post-info -->      <p>Главное в этой версии &mdash; возможность автоматической миграции систем,
-базирующихся на Ubuntu 16.04 Xenial. Она поддерживает Ubuntu Xenial,
-Ubuntu Bionic и произвольную гетерогенную комбинацию из этих версий
-Ubuntu Linux, но включает в себя скрипты для (полу-)автоматического
-обновления серверов и рабочих станций с Ubuntu Xenial до Ubuntu Bionic
-при сохранении функциональности и настроек всей системы в целом.
-Инструкции можно найти в файле
-<code>Documentation/1604_to_1804.txt</code>.</p>
-<p>Заметьте, что следующая версия Umbrella Linux больше не будет поддерживать
-Ubuntu 16.04 Xenial. Не забудьте обновить свои системы до её выхода.</p>
+</footer><!-- /.post-info -->      <p>Основное новшество &ndash; поддержка Ubuntu 22.04 &ldquo;Jammy Jellyfish&rdquo; в
+дополнение к продолжающейся поддержке Ubuntu 18.04 &ldquo;Bionic Beaver&rdquo;.
+Поддержка &ldquo;Jammy&rdquo; находится пока в альфа-статусе
+(планируется ещё ряд крупных изменений в системе), в то время как
+поддержка Ubuntu 18.04 стабильна и годится для рабочих систем. Здесь
+нужно отметить, что Ubuntu 20.04 не поддерживается и не будет
+поддерживаться Umbrella Linux.</p>
+<p>Разработка Umbrella Linux проходит параллельно с разработкой
+<a href="https://github.com/metlov/bcfg2">собственной ветки bcfg2</a>. Последние
+изменения в обоих проектах позволяют генерировать конфигурацию
+оффлайн. Причём, в посимвольно воспроизводимом виде на всех поддерживаемых
+платформах и двух (в прошлом поддерживаемых Umbrella Linux и до сих пор
+поддерживаемых bcfg2) версиях python. Это очень полезная возможность для
+автоматического тестирования систем. Пример соответствующего скрипта и
+инструкции можно найти в <code>Local/testing</code>.</p>
 <h3>Summary of Changes:</h3>
 <ul>
-<li>Скрипты индивидуальной миграции серверов и рабочих станций с Ubuntu Xenial на Ubuntu Bionic.</li>
-<li>Переход на Horde (вместо Squirrelmail) для организации удалённого доступа к электронной почте.</li>
-<li>Сервер мониторинга теперь автоматически конфигурирует MRTG для отслеживания загрузки внешнего канала связи.</li>
-<li>Убран тег <code>&lt;net/&gt;</code> из umbrella.xml, что допускает более гибкую конфигурацию подсетей.</li>
-<li>Возможность конфигурировать в firewall.xml только получающих или только отправляющих письма почтовых роботов.</li>
-<li>Дополнительные правила для OSSEC, отключающие несущественные уведомления.</li>
+<li>Поддержка Ubuntu 22.04 &ldquo;Jammy Jellyfish&rdquo;.</li>
+<li>Удалена поддержка Ubuntu 16.04 &ldquo;Xenial Xerus&rdquo;.</li>
+<li>Переход на Python 3 в генераторах конфигурационных файлов и везде.</li>
+<li>Полностью переписан установочный скрипт с использованием возможности предварительного построения конфигурации всего кластера &ldquo;оффлайн&rdquo;.</li>
+<li>Посимвольно воспроизводимая генерация конфигурации на всех поддерживаемых платформах.</li>
+<li>Сетевая загрузка UEFI (и BIOS, как раньше) для установки рабочих станций и запуска терминалов.</li>
+<li>Переход от ejabberd к prosody для поддержки jabber с авторизацией черех GSSAPI.</li>
+<li>Возможность указания в firewall.xml дополнительных разрешённых сетей для AXFR с DNS сервера.</li>
+<li>Больше правил OSSEC для исключения несущественных уведомлений (для jammy эта работа ещё не завершена).</li>
 <li>Незначительные исправления.</li>
 </ul>
 <p>Чтобы попробовать Umbrella Linux смотрите
-<a href="/umbrella-linux/ru/installation/">инструкции по установке</a>.</p>
+<a href="installation/">инструкции по установке</a>.</p>
     </div><!-- /.entry-content -->
     <div class="comments">
       <h2>Comments !</h2>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = 'umbrella-linux';
-        var disqus_identifier = 'release-0.4.3.html';
-        var disqus_url = 'https://metlov.github.io/umbrella-linux/ru/release-0.4.3.html';
+        var disqus_identifier = 'release-0.5.0.html';
+        var disqus_url = 'https://metlov.github.io/umbrella-linux/ru/release-0.5.0.html';
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//umbrella-linux.disqus.com/embed.js';

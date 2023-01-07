@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <meta charset="utf-8" />
+        <title>Вопросы</title>
+        <link rel="stylesheet" href="https://metlov.github.io/umbrella-linux/ru/../theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://metlov.github.io/umbrella-linux/ru/">Umbrella Linux home page </a></h1>
+                <nav><ul>
+                <li><a href="https://metlov.github.io/umbrella-linux/">English</a></li>
+                <li class="active"><a href="https://metlov.github.io/umbrella-linux/ru/">Русский</a></li>
+                <!-- separator -->
+                <li style="background-color: white; padding: 5px;">&nbsp</li>
+                    <li><a href="https://metlov.github.io/umbrella-linux/ru/about/">Что это такое ?</a></li>
+                    <li><a href="https://metlov.github.io/umbrella-linux/ru/installation/">Установка</a></li>
+                    <li class="active"><a href="https://metlov.github.io/umbrella-linux/ru/questions/">Вопросы</a></li>
+                    <li><a href="https://metlov.github.io/umbrella-linux/ru/category/posts.html">posts</a></li>
+                </ul>
+             </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">Вопросы</h1>
+    Переводы:
+        <a href="https://metlov.github.io/umbrella-linux/ru/../questions/">en</a>
+
+    <ul>
+<li>Чем отличается Umbrella Linux от других дистрибутивов ?<br />
+Обычные дистрибутивы создавались для того, чтобы помочь установить Linux
+на отдельный компьютер. Целью Umbrella с самого начала было управление
+целым кластером рабочих станций и серверов под Linux.</li>
+<li>Почему Ubuntu ?<br />
+Linux состоит и сотен тысяч различный подпроектов &ndash; программ и библиотек,
+созданных независимыми авторами и командами авторов. Дистрибутивы компилируют,
+конфигурируют и пакуют некоторый набор этих независимо разработанных программ
+в виде единого целого. Что касается компиляции, есть очевидное эволюционное
+давление в пользу создания максимально динамической конфигурации исполняемых
+файлов для максимальной гибкости. Это приводит к тому, что исполняемые файлы
+не так уж сильно отличаются от дистрибутива к дистрибутиву. Поскольку Umbrella
+самостоятельно конфигурует программы, из которых состоит, нет большой разницы
+&ndash; бинарники какого дистрибутива брать за основу.<br />
+Ubuntu используется потому, что на сегодняшний день этот дистрибутив
+поддерживает наиболее широкий спектр компьютерного оборудования. Однако,
+из-за (довольно авантюрных) экспериментов со snap и другими вещами, вполне
+возможно, что будущие версии Umbrella будут непосредственно базироваться
+на Debian. При этом разница для конечных пользователей и для системных
+администраторов будет минимальной.</li>
+<li>Почему bcfg2 ? Это мёртвый проект !<br />
+История систем автоматической конфигурации длинная и усеянная
+остатками различных программных проектов. Множество подходов было
+испытано и забыто. С другой стороны, несмотря на то, что любая программа
+написана на каком-то языке программирования &ndash; не язык имеет значение, а
+функция, которую выполняет программа. Самая важная часть Umbrella
+Linux &ndash; это непосредственно описание конфигурации кластера систем. Это
+описание, в принципе, можно выразить и на другом языке.<br />
+Тем не менее, Bcfg2 &ndash; очень удобный и гибкий язык для описания конфигураций.
+Можно поспорить даже, что он является лучшим в классе. Мёртвый проект ? Не
+проблема. Umbrella основывается на <a href="https://github.com/metlov/bcfg2">своей собственной ветви разработки
+bcfg2</a>, которая поддерживается параллельно.</li>
+<li>Зачем нужна Umbrella ?<br />
+Umbrella может взять на себя управление всей IT инфраструктурой организации
+&ndash; маленькой и большой. Она предоставляет средства для конфигурирования и
+управления рабочими станциями и серверами, пользователями, обновлениями
+программ, средствами сетевой коммуникации (электронной почтой, Jabber,
+календарями WebDAV, веб-сайтом организации) в рамках единой, безопасной
+и непрерывно тестируемой системы. Она может стать основой для дальнейшей
+разработки собственных программ и сервисов организации, без необходимости
+изобретать заново управление компьютерной инфраструктурой. С небольшими
+локальными изменениями конфигурации (поверх того, что уже входит в
+стандарнтый дистрибутив Umbrella Linux) на хорошем железе, Umbrella может
+масштабироваться от управления десятками, до управления тысячами компьютеров.</li>
+</ul>
+</section>
+        <section id="extras" class="body">
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+Этот сайт использует <a href="http://getpelican.com/">Pelican</a>, написанный на <a href="http://python.org">Python</a>.                </address><!-- /#about -->
+
+                <p>Тема создана <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, спасибо!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'umbrella-linux';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

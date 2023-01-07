@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <meta charset="utf-8" />
+        <title>FAQ</title>
+        <link rel="stylesheet" href="http://localhost:8001/ru/../theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://localhost:8001/ru/">Umbrella Linux home page </a></h1>
+                <nav><ul>
+                <li><a href="http://localhost:8001/">English</a></li>
+                <li class="active"><a href="http://localhost:8001/ru/">Русский</a></li>
+                <!-- separator -->
+                <li style="background-color: white; padding: 5px;">&nbsp</li>
+                    <li><a href="http://localhost:8001/ru/about/">Что это такое ?</a></li>
+                    <li><a href="http://localhost:8001/ru/installation/">Установка</a></li>
+                    <li><a href="http://localhost:8001/ru/category/posts.html">posts</a></li>
+                </ul>
+             </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">FAQ</h1>
+    
+    <ul>
+<li>What sets Umbrella Linux apart from other distributions ?<br />
+Traditionally, Linux distributions were created to help install Linux onto a
+single PC. Umbrella&rsquo;s goal from the start is to manage the whole cluster
+of Linux workstations and servers in a coherent manner.</li>
+<li>Why Ubuntu ?<br />
+Linux is made of hundreds of thousands of software pieces &ndash; programs or
+libraries, each developed by (an) independent (team of) authors. Linux
+distributions compile, pre-configure and package these independent programs
+into a coherent set. As far as compilation goes, there is a pressure on
+distributions to make the compiled-in configuration as dynamic as possible
+for highest versatility. Therefore, the binaries are not that much different
+across the distributions. Because Umbrella does its own run-time configuration
+of these binaries, there is not much difference &ndash; which distribution to
+use as a base.<br />
+Ubuntu was chosen, because it offers the widest hardware support at the
+moment. However, because of Ubuntu brave experimentation with snap and
+such, it might very well be possible that future versions of Umbrella
+will be based on Debian directly. Even if this switch does happen, the
+difference for the user and for the system administrator will be minimal.</li>
+<li>Why bcfg2 ? It is a dead project !<br />
+Automatic system configuration has a long history, littered with remnants
+of bit rottent software. Many approaches were tried and forgotten. On the
+other hand, while every program is written in some programming language,
+it is not the language, which matters, but what the program itself does.
+Similarly, the most valuable part of Umbrella is the description of the
+configuration itself.
+It can be expressed in another language as well.<br />
+Still, Bcfg2 is very versatile and convenient language ! It can be argued
+that it is the best in its class. Dead project ?
+No problem, Umbrella is based on
+<a href="https://github.com/metlov/bcfg2">its own fork of bcfg2</a>,
+which will be maintained as long as Umbrella does.</li>
+<li>What is the use case ?<br />
+Umbrella can take over all the IT infrastructure of an organization &ndash; both
+small and large. It can help configure and manage workstations, users,
+software updates, network communication services (like E-mail, jabber,
+WebDAV calendars, organization web site) in a coherent, secure and testable
+manner. It can also serve as a base for development of organization&rsquo;s own
+software and services without reinventing the IT
+infrastructure management. With some local configuration adjustments (on top
+of what is provided as a standard Umbrella Linux distribution) on a proper
+hardware, it can scale from managing dozens to 1000s of computers.</li>
+</ul>
+</section>
+        <section id="extras" class="body">
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+Этот сайт использует <a href="http://getpelican.com/">Pelican</a>, написанный на <a href="http://python.org">Python</a>.                </address><!-- /#about -->
+
+                <p>Тема создана <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, спасибо!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'umbrella-linux';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

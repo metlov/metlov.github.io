@@ -20,6 +20,7 @@
                 <li style="background-color: white; padding: 5px;">&nbsp</li>
                     <li><a href="https://metlov.github.io/umbrella-linux/about/">About Umbrella Linux</a></li>
                     <li><a href="https://metlov.github.io/umbrella-linux/installation/">Installation</a></li>
+                    <li><a href="https://metlov.github.io/umbrella-linux/questions/">FAQ</a></li>
                     <li class="active"><a href="https://metlov.github.io/umbrella-linux/category/posts.html">posts</a></li>
                 </ul>
              </nav>
@@ -27,7 +28,63 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/release-0.4.3.html">Public release 0.4.3</a></h1>
+                    <h1 class="entry-title"><a href="https://metlov.github.io/umbrella-linux/release-0.5.0.html">Public release 0.5.0</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2023-01-07T17:33:00+03:00">
+Published: Sat, 07 Jan 2023
+        </abbr>
+
+        <address class="vcard author">
+By                         <a class="url fn" href="https://metlov.github.io/umbrella-linux/author/konstantin-l-metlov.html">Konstantin L. Metlov</a>
+        </address>
+<p>In <a href="https://metlov.github.io/umbrella-linux/category/posts.html">posts</a>.</p>
+Translations:
+        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.5.0.html">ru</a>
+
+</footer><!-- /.post-info --><p>This release updates Umbrella Linux to support Ubuntu 22.04 &ldquo;Jammy
+Jellyfish&rdquo; and Ubuntu 18.04 &ldquo;Bionic Beaver&rdquo;. The latter support is of
+production quality, the former is of alpha quality (meaning that new
+features are still being developed and the release was not yet tested in
+production). Note that Ubuntu 20.04 &ldquo;Focal Focca&rdquo; will not be supported
+by Umbrella Linux.</p>
+<p>Development of Umbrella Linux goes in conjunction with updates to
+<a href="https://github.com/metlov/bcfg2">our own fork of bcfg2 configuration management system</a>.
+The latest set of changes both to bcfg2 and to Umbrella Linux allows to
+generate XML configuration &ldquo;offline&rdquo; in such a way that it is literally 
+(character-by-character) stable/reproducible across two currently
+supported distributions and two (formerly supported by Umbrella and still
+supported by bcfg2) python versions. It is a very useful feature for
+testing. A sample testing script and instructions are included in
+<code>Local/testing</code> .</p>
+<h3>Summary of Changes:</h3>
+<ul>
+<li>Support for Ubuntu 22.04 &ldquo;Jammy Jellyfish&rdquo;.</li>
+<li>Removed support for Ubuntu 16.04 &ldquo;Xenial Xerus&rdquo;.</li>
+<li>Switched to Python 3 in configuration templates and everywhere.</li>
+<li>New installation script, based on pre-generating configuration for the whole Umbrella cluster offline.</li>
+<li>Literally stable configuration generation across all supported platforms.</li>
+<li>UEFI (and BIOS as before) network boot for workstation installer and terminals.</li>
+<li>Switch from ejabberd to prosody for jabber support with GSSAPI authentication.</li>
+<li>Specify external networks with allowed AXFR transfers for DNS data in firewall.xml.</li>
+<li>More OSSEC spam clean up (still more work is needed on jammy).</li>
+<li>Minor bugfixes.</li>
+</ul>
+<p>See the
+<a href="installation/">installation instructions</a>
+to try Umbrella Linux yourself.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.5.0.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://metlov.github.io/umbrella-linux/release-0.4.3.html" rel="bookmark"
+                           title="Permalink to Public release 0.4.3">Public release 0.4.3</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2021-12-20T18:52:00+03:00">
 Published: Mon, 20 Dec 2021
@@ -40,32 +97,14 @@ By                         <a class="url fn" href="https://metlov.github.io/umbr
 Translations:
         <a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.3.html">ru</a>
 
-</footer><!-- /.post-info --><p>This long-awaited release of the Umbrella Linux is focused on
+</footer><!-- /.post-info -->                <p>This long-awaited release of the Umbrella Linux is focused on
 migration from older Ubuntu 16.04 Xenial based systems. It still supports
 both Ubuntu Xenial and Ubuntu Bionic (as well as hererogenous environment,
 consisting of those), but includes migration scripts for upgrading the
-Umbrella hosts. The instructions are in the file
-<code>Documentation/1604_to_1804.txt</code>.</p>
-<p>The next major release will drop the support of Ubuntu 16.04 Xenial. Please
-do not forget to upgrade your systems before that.</p>
-<h3>Summary of Changes:</h3>
-<ul>
-<li>Migration scripts to rebase the individual hosts from Ubuntu Xenial to Ubuntu Bionic.</li>
-<li>Switch to Horde for Webmail handling instead of Squirrelmail.</li>
-<li>The monitor host now automatically configures MRTG for router flow monitoring.</li>
-<li>Removed the <code>&lt;net/&gt;</code> tag in umbrella.xml, allowing for more flexible network configuration.</li>
-<li>Specify send-only or receive-only E-mail robots in firewall.xml.</li>
-<li>More OSSEC spam clean up.</li>
-<li>Minor bugfixes.</li>
-</ul>
-<p>See the
-<a href="/umbrella-linux/installation/">installation instructions</a>
-to try Umbrella Linux yourself.</p><p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.4.3.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+Umbrella hosts. The instructions are in the …</p>
+                <a class="readmore" href="https://metlov.github.io/umbrella-linux/release-0.4.3.html">read more</a>
+<p>There are <a href="https://metlov.github.io/umbrella-linux/release-0.4.3.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>

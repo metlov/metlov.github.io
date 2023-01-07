@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Public release 0.4.1</title>
+        <title>Public release 0.5.0</title>
         <link rel="stylesheet" href="https://metlov.github.io/umbrella-linux/theme/css/main.css" />
 
         <!--[if IE]>
@@ -29,14 +29,14 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="https://metlov.github.io/umbrella-linux/release-0.4.1.html" rel="bookmark"
-           title="Permalink to Public release 0.4.1">Public release 0.4.1</a></h1>
+        <a href="https://metlov.github.io/umbrella-linux/release-0.5.0.html" rel="bookmark"
+           title="Permalink to Public release 0.5.0">Public release 0.5.0</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2020-01-18T15:55:00+03:00">
-Published: Sat, 18 Jan 2020
+        <abbr class="published" title="2023-01-07T17:33:00+03:00">
+Published: Sat, 07 Jan 2023
         </abbr>
 
         <address class="vcard author">
@@ -44,26 +44,38 @@ By                         <a class="url fn" href="https://metlov.github.io/umbr
         </address>
 <p>In <a href="https://metlov.github.io/umbrella-linux/category/posts.html">posts</a>.</p>
 Translations:
-        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.4.1.html">ru</a>
+        <a href="https://metlov.github.io/umbrella-linux/ru/release-0.5.0.html">ru</a>
 
-</footer><!-- /.post-info -->      <p>I&rsquo;m happy to announce the version 0.4.1 of the Umbrella Linux.</p>
-<p>The main focus of this release is on the LXD container mode improvements.
-Currently both Ubuntu 18.04 &ldquo;Bionic&rdquo; and  Ubuntu 16.04 &ldquo;Xenial&rdquo; are supported,
-but the automatic installer is only tested on &ldquo;Bionic&rdquo;.</p>
+</footer><!-- /.post-info -->      <p>This release updates Umbrella Linux to support Ubuntu 22.04 &ldquo;Jammy
+Jellyfish&rdquo; and Ubuntu 18.04 &ldquo;Bionic Beaver&rdquo;. The latter support is of
+production quality, the former is of alpha quality (meaning that new
+features are still being developed and the release was not yet tested in
+production). Note that Ubuntu 20.04 &ldquo;Focal Focca&rdquo; will not be supported
+by Umbrella Linux.</p>
+<p>Development of Umbrella Linux goes in conjunction with updates to
+<a href="https://github.com/metlov/bcfg2">our own fork of bcfg2 configuration management system</a>.
+The latest set of changes both to bcfg2 and to Umbrella Linux allows to
+generate XML configuration &ldquo;offline&rdquo; in such a way that it is literally 
+(character-by-character) stable/reproducible across two currently
+supported distributions and two (formerly supported by Umbrella and still
+supported by bcfg2) python versions. It is a very useful feature for
+testing. A sample testing script and instructions are included in
+<code>Local/testing</code> .</p>
 <h3>Summary of Changes:</h3>
 <ul>
-<li>LXD version of Umbrella now installs and runs into unprivileged containers except for the nfs server (which needs to be privileged).</li>
-<li>LXD version does not use NFS now for mounting home directories in containers and relies on bind mounts instead (workstations still use NFS).</li>
-<li>Optional external access to the mail server via SMTPS and IMAPS (configurable in firewall.xml).</li>
-<li>Mozilla Thunderbird E-mail client auto-configuration for all the alternative domains both from within the local network and from outside (if external mail server access is enabled).</li>
-<li>DNS blacklist configuration improvements for the SMTP server.</li>
-<li>Nagios monitoring improvements.</li>
-<li>Extensive OSSEC spam clean up.</li>
-<li>Improvements to Ubuntu 16.04 &ldquo;Xenial&rdquo; legacy support.</li>
-<li>Numerous small bugfixes.</li>
+<li>Support for Ubuntu 22.04 &ldquo;Jammy Jellyfish&rdquo;.</li>
+<li>Removed support for Ubuntu 16.04 &ldquo;Xenial Xerus&rdquo;.</li>
+<li>Switched to Python 3 in configuration templates and everywhere.</li>
+<li>New installation script, based on pre-generating configuration for the whole Umbrella cluster offline.</li>
+<li>Literally stable configuration generation across all supported platforms.</li>
+<li>UEFI (and BIOS as before) network boot for workstation installer and terminals.</li>
+<li>Switch from ejabberd to prosody for jabber support with GSSAPI authentication.</li>
+<li>Specify external networks with allowed AXFR transfers for DNS data in firewall.xml.</li>
+<li>More OSSEC spam clean up (still more work is needed on jammy).</li>
+<li>Minor bugfixes.</li>
 </ul>
 <p>See the
-<a href="/umbrella-linux/installation/">installation instructions</a>
+<a href="installation/">installation instructions</a>
 to try Umbrella Linux yourself.</p>
     </div><!-- /.entry-content -->
     <div class="comments">
@@ -71,8 +83,8 @@ to try Umbrella Linux yourself.</p>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = 'umbrella-linux';
-        var disqus_identifier = 'release-0.4.1.html';
-        var disqus_url = 'https://metlov.github.io/umbrella-linux/release-0.4.1.html';
+        var disqus_identifier = 'release-0.5.0.html';
+        var disqus_url = 'https://metlov.github.io/umbrella-linux/release-0.5.0.html';
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//umbrella-linux.disqus.com/embed.js';

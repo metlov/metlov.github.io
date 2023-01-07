@@ -20,6 +20,7 @@
                 <li style="background-color: white; padding: 5px;">&nbsp</li>
                     <li><a href="https://metlov.github.io/umbrella-linux/about/">About Umbrella Linux</a></li>
                     <li class="active"><a href="https://metlov.github.io/umbrella-linux/installation/">Installation</a></li>
+                    <li><a href="https://metlov.github.io/umbrella-linux/questions/">FAQ</a></li>
                     <li><a href="https://metlov.github.io/umbrella-linux/category/posts.html">posts</a></li>
                 </ul>
              </nav>
@@ -38,36 +39,32 @@ the Internet), or wait until this site contains more information.</p>
 virtual machine.</p>
 <ol>
 <li>
-<p>Download the Ubuntu 18.04 &ldquo;Bionic&rdquo; minimal installation image 
-(either <a href="http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-i386/current/images/netboot/mini.iso">32-bit</a>
-or <a href="http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso">64-bit</a>
-version) and save it to your hard drive. Installation over a freshly installed
-Server variant of Ubuntu is also possible.</p>
+<p>Download the
+<a href="https://releases.ubuntu.com/releases/22.04/ubuntu-22.04.1-live-server-amd64.iso">Ubuntu 22.04 &ldquo;Jammy&rdquo; server installation image</a>
+and save it to your hard drive.</p>
 </li>
 <li>
-<p>Create the Virtual Machine for Umbrella Server to live in. For a typical
-bare installation (with almost no space for user home directories or mail)
-you will need a VM with 25Gb of hard drive, 3Gb RAM and a couple of virtual
-CPUs. When creating a VM load the above-downloaded Ubuntu minimal
-installation image into its virtual CD drive.</p>
+<p>Create the Virtual Machine (VM) for Umbrella Server to live in.
+For a typical bare installation (with almost no space for user home
+directories or mail) you will need a VM with 15Gb of hard drive, 
+4Gb RAM and a couple of virtual CPUs.</p>
 <p>When installing into VirtualBox with bridged network adapter,
 please ensure that its promiscous mode is allowed.</p>
 <p><em>Optional:</em> it can also be a good idea to have a secondary network card
-installed on your Umbrella Server, which will manage the network behind it
-(installing and using workstations and terminals). Without the secondary
-network card (or other means to connect to the &ldquo;pub&rdquo; bridge) you will only
-be able to access your new system as if you are outside of it.</p>
+on your Umbrella Server (or the Virtualbox VM) to connect the local network
+(containing workstations and terminals). Without the secondary network card
+(or other means to connect to the &ldquo;pub&rdquo; bridge) you will only be able to
+access your new system as if you are outside of it.</p>
 </li>
 <li>
-<p>Boot the virtual machine and install Ubuntu (minimal or server ISO)
-with all the default settings (basically, agreeng to defaults all the time
-and not selecting any tasks via tasksel).
+<p>Load the installation image into the virtual CD drive of the VM, boot and
+install the Ubuntu Server with minimal settings (no optional software).
 Create some temporary user with a simple password.</p>
 </li>
 <li>
 <p>After the installation is finished, log in as a temporary user you have
 created. Use the <code>sudo -i</code> command to become root and download
-all the files from <a href="/umbrella-linux/installer/">this web directory</a> to your
+all the files from <a href="../installer/">this web directory</a> to your
 root&rsquo;s home ( e.g. with
 <code>wget -e robots=off -R 'index.html*' -r -np -nd -nc -l 1 https://metlov.github.io/umbrella-linux/installer/</code> ).
 These are all simple text files and <code>./umbrella-install</code>
@@ -76,24 +73,27 @@ If you wish to generate unique passwords and certificates for your system
 (it is necessary, for example, if you change the system name or location
 in umbrella.xml) &ndash; delete the <code>umbrella_keys.xml</code> file (it will be recreated
 by the installer with your own settings). Do not install any additional
-packages at this point (may be except <code>mc</code> and <code>aptitude</code>).</p>
+packages at this point (may be except <code>gpm</code>,  <code>mc</code> and <code>aptitude</code>).</p>
 </li>
 <li>
-<p>Review the <code>*.xml</code> files and alter the settings there.
-You may want to check the name of vmhost (must coincide with the name
-of the Ubuntu system, used for installation),
-the definitions of the extif on router (the IP and
-gatewey addresses) and vmhost (mac address) to ensure they correspond to
-the ones, reported by <code>ip addr</code> and <code>ip route</code>.
-Since there is no documentation yet, you will need to consult somebody
+<p>Review the <code>*.xml</code> files and alter the settings there. You may want to
+check the name of vmhost (must coincide with the name of the Ubuntu
+system, used for installation), the definition of the extif on router
+(the IP and gatewey addresses) to ensure it correspond to the external
+network parameters, reported by <code>ip addr</code> and <code>ip route</code>. It is important
+that in umbrella.xml the router gets its external interface&rsquo;s MAC set to
+the real MAC of the external interface of the server (check with <code>ip
+addr</code>). The external interface of the vmhost in umbrella.xml then can be
+set to an arbitrary free MAC.</p>
+</li>
+</ol>
+<p>Since there is no documentation yet, it is best to consult somebody
 if you want to do some non-trivial changes.</p>
-</li>
-<li>
-<p>Run the &ldquo;./umbrella-install&rdquo; script you&rsquo;ve also downloaded on the previous
+<ol>
+<li>Run the &ldquo;./umbrella-install&rdquo; script you&rsquo;ve also downloaded on the previous
 step. It should do everything automatically. It may take several hours to
 complete depending on the speed of your hard drive.
-Ejoy your new Umbrella Linux system !</p>
-</li>
+Ejoy your new Umbrella Linux system !</li>
 </ol>
 <p>What to do next ?</p>
 <p>With the help of VirtualBox you can NAT some port (say 10022) to the port 22 of
@@ -102,12 +102,16 @@ as a first admin user, specified in umbrella.xml with a simple password,
 communicated to you at the end of the installation process. Then you can either
 connect via ssh or via X2Go client (be sure to select &ldquo;Custom desktop&rdquo; in sesion
 type and type there <code>umbrella-session</code>). From the graphical session you can
-visit <code>https://gosa.&lt;your-domain&gt;/</code> in a browser for Fusion Directory
+visit <code>https://config.&lt;your-domain&gt;/</code> in a browser for Fusion Directory
 interface to your users, groups and workstations. Then you can connect a NAT
 or Internal VirtualBox network as a secondary interface of the Umbrella Server
 VM, create a couple of workstation VMs on this network, register their MAC
 addresses in Fusion Directory and try to boot them via PXE to try
 terminal mode and local workstation installation.</p>
+<p>A more detailed form of these instructions lives in
+<code>Documentation/installer/README</code> file in Umbrella Linux git or in the
+actual configuration of your Umbrella Linux cluster on its configuration
+server (<code>config</code> by default) in the directory <code>/var/lib/bcfg2</code>.</p>
 </section>
         <section id="extras" class="body">
         </section><!-- /#extras -->
